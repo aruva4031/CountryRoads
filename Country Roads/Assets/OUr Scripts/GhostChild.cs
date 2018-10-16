@@ -8,6 +8,7 @@ public class GhostChild : MonoBehaviour {
     public GameObject player;
     float speed;
     private bool isHaunting;
+    public bool hasSeen;
 	// Use this for initialization
 	void Start () {
         //make ghost transparent
@@ -18,27 +19,38 @@ public class GhostChild : MonoBehaviour {
         player = GameObject.Find("Player");
         //player is not haunting the ghost yet; haunts him when he sits in the car
         isHaunting = false;
+        hasSeen = false;
         //set the speed for moving towards player
-        speed = 0.01f;
+        speed = 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         //if the player is close, move towards it
-        if (Vector3.Distance(transform.position, player.transform.position) < 10)
+        if (Vector3.Distance(transform.position, player.transform.position) <= 10&&!hasSeen)
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), speed);
             //cast raycast towards player: if it sees the player, reduce sanity?
-            if (Physics.Raycast(transform.position, player.transform.position, 10))
+            hasSeen = true;
+            GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerOnce();
+            /*if (Physics.Raycast(transform.position, player.transform.position, 10))
             {
-                GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().sanityLowerCall();
-            }
+                GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerOnce();
+            }*/
         }
-        else if(!isHaunting)
+        else if(Vector3.Distance(transform.position, player.transform.position) > 10&&hasSeen==true)
+        {
+            hasSeen = false;
+        }
+        else if (!isHaunting)
         {
             GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
+        }
+        else if (isHaunting)
+        {
+            transform.position = positionInCar.position;
         }
     }
 
@@ -47,12 +59,14 @@ public class GhostChild : MonoBehaviour {
         StartCoroutine(hauntPlayerInCar());
     }
 
+
     public IEnumerator hauntPlayerInCar()
     {
         isHaunting = true;
+        GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = true;
         transform.position = positionInCar.position;
         yield return new WaitForSeconds(10);
         GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
-        GameObject.Destroy(this);
+        GameObject.Destroy(this.gameObject);
     }
 }

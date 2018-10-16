@@ -24,18 +24,23 @@ public class SanityMeter : MonoBehaviour {
     {
         if (lowerSanity && sanity > 0)
         {
-            sanity -= 1;
+            sanity -= 5;
         }
+    }
+
+    public void lowerOnce()
+    {
+        sanity -= 5;
     }
 
     public void sanityLowerCall()
     {
-        StartCoroutine(sanityLoweringStart());
+        lowerSanity = true;
     }
 
-    public IEnumerator sanityLoweringStart()
+    /*public IEnumerator sanityLoweringStart()
     {
         yield return new WaitForSeconds(15);
         lowerSanity = true;
-    }
+    }*/
 }
