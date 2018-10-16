@@ -8,15 +8,22 @@ public class CameraController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        transform.rotation = player.transform.rotation;
+        this.transform.rotation = player.transform.rotation;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Debug.Log(Input.GetAxis("HorizontalRS"));
-        if (Input.GetAxis("HorizontalRS").Equals())
-        {
 
+        //TODO: fixupdate method
+
+        if (Input.GetAxis("HorizontalRS").Equals(1))
+        {
+            this.transform.Rotate(Vector3.down*Time.deltaTime*3);
+        }
+        else if (Input.GetAxis("HorizontalRS")<1)
+        {
+            this.transform.Rotate(Vector3.zero);
         }
 	}
 }
