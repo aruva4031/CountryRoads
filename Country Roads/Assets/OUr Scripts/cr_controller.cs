@@ -65,5 +65,15 @@ public class cr_controller : MonoBehaviour {
 		car.GetComponent<RCC_CarControllerV3> ().steerInput = xbox_lsHaxis;
 
 
+
+		if (xbox_lb) {
+
+			if (car.GetComponent<RCC_CarControllerV3> ().highBeamHeadLightsOn == true) {
+				car.GetComponent<RCC_CarControllerV3> ().highBeamHeadLightsOn = false;
+			} else {
+				car.GetComponent<RCC_CarControllerV3> ().highBeamHeadLightsOn = true;
+			}
+		}
+
 	}
 }
