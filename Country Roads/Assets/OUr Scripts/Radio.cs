@@ -7,6 +7,7 @@ public class Radio : MonoBehaviour
     // is radio switch on?
     public bool radioOn;
     public AudioSource radioSound;
+    public GameObject camera;
 
     // Use this for initialization
     void Start()
@@ -16,12 +17,13 @@ public class Radio : MonoBehaviour
         radioSound = GetComponent<AudioSource>();
         radioSound.Play();
         radioSound.volume = 0f;
-        //if radio is turned off: mute it to 0, and if on: set volume to 1
+        camera = GameObject.FindGameObjectWithTag("Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (radioOn)
         {
             Debug.Log("The radio is ON");
@@ -29,12 +31,15 @@ public class Radio : MonoBehaviour
         else if (!radioOn)
         {
             Debug.Log("The radio is OFF");
-        }
+        }*/
 
-        if (Input.GetButtonDown("XboxA"))
+        if (camera.GetComponent<CameraController>().isRadioSeen())
         {
-            this.switchRadio();
-            Debug.Log("Radio has been switched");
+            if (Input.GetButtonDown("XboxA"))
+            {
+                this.switchRadio();
+                Debug.Log("Radio has been switched");
+            }
         }
     }
 

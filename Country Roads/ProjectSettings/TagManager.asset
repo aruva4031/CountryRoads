@@ -8,6 +8,8 @@ TagManager:
   - SanityMeter
   - GhostChild
   - Radio
+  - BloodEffect
+  - Camera
   layers:
   - Default
   - TransparentFX

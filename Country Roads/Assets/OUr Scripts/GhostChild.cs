@@ -55,6 +55,7 @@ public class GhostChild : MonoBehaviour {
         else if (isHaunting)
         {
             transform.position = positionInCar.position;
+            transform.rotation = positionInCar.rotation;
             if (radio.GetComponent<Radio>().radioOn)
             {
                 ghostSound.volume = 0.2f;
@@ -78,7 +79,8 @@ public class GhostChild : MonoBehaviour {
         GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = true;
         ghostSound.Play();
         transform.position = positionInCar.position;
-        transform.LookAt(GameObject.Find("Player").transform);
+        transform.rotation = positionInCar.rotation;
+        //transform.LookAt(GameObject.Find("Player").transform);
         yield return new WaitForSeconds(10);
         GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
         GameObject.Destroy(this.gameObject);
