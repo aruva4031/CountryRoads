@@ -1300,7 +1300,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e1aff378bb8865e4ca81a3912720a97f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8097ccf8d2d4aa849b784c4139c348d5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   player: {fileID: 0}
   hasSeen: 0
   ghostSound: {fileID: 0}
+  radio: {fileID: 0}
 --- !u!136 &136798647728261582
 CapsuleCollider:
   m_ObjectHideFlags: 1
