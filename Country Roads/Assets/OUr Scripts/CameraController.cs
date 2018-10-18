@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
         this.radio = GameObject.FindGameObjectWithTag("Radio");
         this.ray = new Ray(transform.position, transform.forward);
         this.transform.rotation = player.transform.rotation;
-        this.lerpValue = 0.04F;
+        this.lerpValue = 0.02F;
         this.horizontalRS = Input.GetAxis("HorizontalRS");
         this.seeRadio = false;
     }
@@ -72,8 +72,8 @@ public class CameraController : MonoBehaviour
             }
             else
             {
-                // rotate the camera back to the original position
-               //this.transform.rotation = Quaternion.Lerp(this.transform.rotation, player.transform.rotation, Time.time * lerpValue);
+               // rotate the camera back to the original position
+               this.transform.rotation = Quaternion.Lerp(this.transform.rotation, player.transform.rotation, Time.time * lerpValue);
             }
         }
     }
