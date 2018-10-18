@@ -8,6 +8,7 @@ public class SanityMeter : MonoBehaviour {
     public bool lowerSanity;
     public bool coroutine_running;
     public GameObject bloodEffects;
+    public GameObject gameRadio;
 
     // Use this for initialization
     void Start () {
@@ -16,6 +17,7 @@ public class SanityMeter : MonoBehaviour {
         InvokeRepeating("sanityLowering", 0.0f, 1.0f);
         bloodEffects = GameObject.FindWithTag("BloodEffect");
         bloodEffects.SetActive(false);
+        gameRadio = GameObject.FindGameObjectWithTag("Radio");
     }
 	
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class SanityMeter : MonoBehaviour {
 
     public void sanityLowering()
     {
-        if (lowerSanity && sanity > 0)
+        if (lowerSanity && sanity > 0 && !gameRadio.GetComponent<Radio>().radioOn)
         {
             sanity -= 5;
         }
