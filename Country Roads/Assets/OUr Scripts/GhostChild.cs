@@ -10,6 +10,7 @@ public class GhostChild : MonoBehaviour {
     private bool isHaunting;
     public bool hasSeen;
     public AudioSource ghostSound;
+    public GameObject radio;
 	// Use this for initialization
 	void Start () {
         //make ghost transparent
@@ -23,6 +24,8 @@ public class GhostChild : MonoBehaviour {
         hasSeen = false;
         //set the speed for moving towards player
         speed = 0.1f;
+        ghostSound = GetComponent<AudioSource>();
+        radio = GameObject.FindGameObjectWithTag("Radio");
     }
 
     // Update is called once per frame
@@ -52,11 +55,11 @@ public class GhostChild : MonoBehaviour {
         else if (isHaunting)
         {
             transform.position = positionInCar.position;
-            if (GameObject.FindWithTag("Radio").GetComponent<Radio>().radioOn)
+            if (radio.GetComponent<Radio>().radioOn)
             {
-                ghostSound.volume = 0.5f;
+                ghostSound.volume = 0.2f;
             }
-            else
+            else if(!radio.GetComponent<Radio>().radioOn)
             {
                 ghostSound.volume = 1f;
             }
@@ -72,8 +75,8 @@ public class GhostChild : MonoBehaviour {
     public IEnumerator hauntPlayerInCar()
     {
         isHaunting = true;
-        ghostSound.Play();
         GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = true;
+        ghostSound.Play();
         transform.position = positionInCar.position;
         transform.LookAt(GameObject.Find("Player").transform);
         yield return new WaitForSeconds(10);

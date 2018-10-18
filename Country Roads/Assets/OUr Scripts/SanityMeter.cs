@@ -37,7 +37,7 @@ public class SanityMeter : MonoBehaviour {
 
     public void sanityLowering()
     {
-        if (lowerSanity && sanity > 0 && !gameRadio.GetComponent<Radio>().radioOn)
+        if (lowerSanity && sanity > 0 && (gameRadio.GetComponent<Radio>().radioOn==false))
         {
             sanity -= 5;
         }
