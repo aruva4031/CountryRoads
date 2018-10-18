@@ -25,9 +25,10 @@ public class Radio : MonoBehaviour
             Debug.Log("The radio is OFF");
         }
 
-        if (Input.GetButton("joystick button 0"))
+        if (Input.GetButton("XboxA"))
         {
             this.switchRadio();
+            Debug.Log("Radio has been switched");
         }
     }
 
