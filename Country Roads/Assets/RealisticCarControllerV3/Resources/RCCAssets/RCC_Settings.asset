@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7756f06ac1b082e4bb1697f768a5a41f, type: 3}
   m_Name: RCC_Settings
   m_EditorClassIdentifier: 
-  toolbarSelectedIndex: 0
+  toolbarSelectedIndex: 2
   fixedTimeStep: 0.02
   maxAngularVelocity: 8
-  behaviorType: 5
+  behaviorType: 0
   useFixedWheelColliders: 1
-  controllerType: 0
+  controllerType: 2
   verticalInput: Vertical
   horizontalInput: Horizontal
   handbrakeKB: 32
@@ -35,8 +35,8 @@ MonoBehaviour:
   runEngineAtAwake: 1
   autoReverse: 1
   contactParticles: {fileID: 193332, guid: 863b5201aede3aa438ac7d962625d663, type: 2}
-  units: 0
-  uiType: 0
+  units: 1
+  uiType: 2
   useTelemetry: 0
   useAccelerometerForSteering: 1
   useSteeringWheelForSteering: 0
@@ -47,10 +47,12 @@ MonoBehaviour:
   useLightProjectorForLightingEffect: 1
   exhaustGas: {fileID: 104134, guid: b6fecef6c92b67147b638a07ef91195b, type: 2}
   vehicleLayer:
+    serializedVersion: 2
     m_Bits: 256
   skidmarksManager: {fileID: 11447598, guid: a107dc7aa77e84f4d8cf9888def4fe64, type: 2}
   projector: {fileID: 102982, guid: 7f7b6e33e52b82e43a57b7cc85ed5cf9, type: 2}
   projectorIgnoreLayer:
+    serializedVersion: 2
     m_Bits: 0
   gearShiftingClips:
   - {fileID: 8300000, guid: fd92e514f75331e4085d0846a166fef8, type: 3}

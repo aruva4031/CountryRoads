@@ -64,6 +64,9 @@
      <Compile Include="Assets\RealisticCarControllerV3\Editor\RCC_PhysicMaterialsEditor.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Editor\RCC_SettingsEditor.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Editor\ScriptableObjectUtility.cs" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Users/xboxd/Desktop/CST426/CountryRoads/CountryRoads/Country Roads/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

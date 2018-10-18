@@ -51,8 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Our Scripts\test1.cs" />
-     <Compile Include="Assets\Our Scripts\test2.cs" />
+     <Compile Include="Assets\OUr Scripts\CameraController.cs" />
+     <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
+     <Compile Include="Assets\OUr Scripts\GhostChild.cs" />
+     <Compile Include="Assets\OUr Scripts\GhostchildPlayerCollision.cs" />
+     <Compile Include="Assets\OUr Scripts\SanityMeter.cs" />
+     <Compile Include="Assets\OUr Scripts\test1.cs" />
+     <Compile Include="Assets\OUr Scripts\test2.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCHoodCamera.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCResetScene.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCWheelCamera.cs" />
@@ -167,6 +172,7 @@
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+     <None Include="Assets\BloodCarEffect\RainNoDistortion.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
@@ -179,6 +185,9 @@
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Users/xboxd/Desktop/CST426/CountryRoads/CountryRoads/Country Roads/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
