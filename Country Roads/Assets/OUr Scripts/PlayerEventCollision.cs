@@ -1,20 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- /*This script's purpose is to create a connection between player and ghost child. Since the player has the collider and
-  *the ghost child has the trigger collider, this script needs to be part of the player, while the GhostChild script should
-  *be appended to the GhostChild object. Therefore, this scripts creates the connection.*/
-public class GhostchildPlayerCollision : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-    }
+public class PlayerEventCollision : MonoBehaviour {
 
     //if the player collides with a trigger collider
     private void OnTriggerEnter(Collider collider)
@@ -28,6 +16,17 @@ public class GhostchildPlayerCollision : MonoBehaviour {
                 //make the ghost child start haunting the player in the car by calling the startHaunting() function
                 collider.gameObject.GetComponent<GhostChild>().startHaunting();
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if the player collides with the ghost child
+        if (collision.transform.tag == "Deer")
+        {
+            Debug.Log(collision.transform.tag);
+            collision.gameObject.GetComponentInParent<Animator>().SetBool("deerFalls", true);
+            GetComponentInParent<PlayerController>().decreaseCarDamage();
         }
     }
 }

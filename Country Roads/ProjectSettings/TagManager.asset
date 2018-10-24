@@ -10,6 +10,8 @@ TagManager:
   - Radio
   - BloodEffect
   - Camera
+  - point
+  - Deer
   layers:
   - Default
   - TransparentFX
