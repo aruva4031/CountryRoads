@@ -12,6 +12,7 @@ TagManager:
   - Camera
   - point
   - Deer
+  - GPS
   layers:
   - Default
   - TransparentFX
