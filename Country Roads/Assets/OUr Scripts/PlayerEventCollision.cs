@@ -17,6 +17,12 @@ public class PlayerEventCollision : MonoBehaviour {
                 collider.gameObject.GetComponent<GhostChild>().startHaunting();
             }
         }
+        //if (collider.gameObject.tag == "StalkerGhost")
+        //{
+        //    Debug.Log(collider.transform.tag);
+        //    collider.gameObject.GetComponentInParent<StalkerGhostAI>().speed = 0;
+        //    collider.gameObject.GetComponentInParent<StalkerGhostAI>().killPlayer();
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,4 +35,5 @@ public class PlayerEventCollision : MonoBehaviour {
             GetComponentInParent<PlayerController>().decreaseCarDamage();
         }
     }
+
 }

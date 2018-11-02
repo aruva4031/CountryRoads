@@ -48,8 +48,6 @@ public class CameraController : MonoBehaviour
     {
         this.horizontalRS = Input.GetAxis("HorizontalRS");
 
-        Debug.Log(this.horizontalRS);
-
         //TODO: fixupdate method
 
         if (this.horizontalRS >= 0.8)
