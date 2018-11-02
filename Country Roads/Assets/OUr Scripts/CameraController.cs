@@ -53,6 +53,7 @@ public class CameraController : MonoBehaviour
         if (this.horizontalRS >= 0.8)
         {
             this.transform.Rotate(Vector3.down * Time.deltaTime * -60);
+            Debug.Log("Go into horizontalRS if");
         }
         else if (this.horizontalRS <= -0.8)
         {

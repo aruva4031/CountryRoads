@@ -10,6 +10,7 @@ public class StalkerGhostAI : MonoBehaviour {
     public AudioSource deathSource;
     public AudioClip deathScream;
     public AudioClip ghostWail;
+    public Animation anim;
     public float maxDistance;
     public float closeDistance;
     public bool isKilled;
@@ -17,6 +18,7 @@ public class StalkerGhostAI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        anim = GameObject.FindWithTag("Camera").GetComponent<Animation>();
         //set transparent color
         Renderer[] meshes = GetComponentsInChildren<Renderer>();
         foreach(Renderer model in meshes)
@@ -60,6 +62,10 @@ public class StalkerGhostAI : MonoBehaviour {
             deathSource.clip = deathScream;
             deathSource.Play();
         }
+        //if (coroutine_running)
+        //{
+        //    transform.rotation = GameObject.FindWithTag("Camera").GetComponent<Animation>().transform.rotation;
+        //}
     }
 
     //public void killPlayer()
@@ -72,7 +78,8 @@ public class StalkerGhostAI : MonoBehaviour {
         coroutine_running = true;
         transform.Rotate(new Vector3(0, -90, 0));
         //play audio source clip
-        GameObject.FindWithTag("Camera").GetComponent<Animator>().SetBool("playerDies", true);
+        GameObject.FindWithTag("Camera").GetComponent<Animator>().SetBool("playerDies",true);
+        //transform.rotation = GameObject.FindWithTag("Camera").GetComponent<Animation>().transform.rotation;
         deathSource.Stop();
         deathSource.loop = false;
         deathSource.clip = ghostWail;
