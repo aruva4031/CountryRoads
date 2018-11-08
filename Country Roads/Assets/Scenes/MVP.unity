@@ -1008,7 +1008,7 @@ MeshCollider:
   m_GameObject: {fileID: 491290870}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -1044,7 +1044,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 528251918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2599945, y: 1.09, z: -0.269989}
+  m_LocalPosition: {x: -0.2599945, y: 1.066, z: -0.256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1536524572}
@@ -1066,6 +1066,7 @@ MonoBehaviour:
   radio: {fileID: 672396763}
   lerpValue: 0
   horizontalRS: 0
+  verticalRS: 0
   seeRadio: 0
 --- !u!1 &531906162
 GameObject:
@@ -7095,6 +7096,11 @@ Prefab:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114964149497755430, guid: 78a697ad139d3aa45868c06b51f65baf,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1361712921}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78a697ad139d3aa45868c06b51f65baf, type: 2}
   m_IsPrefabParent: 0

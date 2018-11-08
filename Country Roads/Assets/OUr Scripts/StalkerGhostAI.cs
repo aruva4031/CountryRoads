@@ -15,6 +15,8 @@ public class StalkerGhostAI : MonoBehaviour {
     public float closeDistance;
     public bool isKilled;
     private bool coroutine_running;
+    public bool stopMovement;
+
 
     // Use this for initialization
     void Start () {
@@ -34,6 +36,7 @@ public class StalkerGhostAI : MonoBehaviour {
         isKilled = false;
         coroutine_running = false;
         originalSpeed = speed;
+        stopMovement = false;
     }
 	
 	// Update is called once per frame
@@ -76,10 +79,18 @@ public class StalkerGhostAI : MonoBehaviour {
     IEnumerator playerLoses()
     {
         coroutine_running = true;
-        transform.Rotate(new Vector3(0, -90, 0));
+        stopMovement = true;
+        //GameObject.FindWithTag("Camera").transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -90, 0), Time.deltaTime * 3f);
+        //yield return new WaitForSeconds(2f);
+        //GameObject.FindWithTag("Camera").transform.rotation=Vector3.RotateTowards(new Vector3(GameObject.FindWithTag("Camera").transform.rotation.x, GameObject.FindWithTag("Camera").transform.rotation.y, GameObject.FindWithTag("Camera").transform.rotation.z),new Vector3(transform.rotation.x, transform.rotation.y-90f,transform.rotation.z),3f,0.0f);
+
+        // Using Quaternion's rotation
+        //GameObject.FindWithTag("Camera").transform.rotation = Quaternion.LookRotation(Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z), Vector3.up);
+        //GameObject.FindWithTag("GameCamera").transform.LookAt(new Vector3(target.transform.position.x, target.transform.position.y+5f, target.transform.position.z));
+        
         //play audio source clip
+        //yield return new WaitForSeconds(2.0f);
         GameObject.FindWithTag("Camera").GetComponent<Animator>().SetBool("playerDies",true);
-        //transform.rotation = GameObject.FindWithTag("Camera").GetComponent<Animation>().transform.rotation;
         deathSource.Stop();
         deathSource.loop = false;
         deathSource.clip = ghostWail;

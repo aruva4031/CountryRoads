@@ -17,7 +17,7 @@ public class Radio : MonoBehaviour
         radioSound = GetComponent<AudioSource>();
         radioSound.Play();
         radioSound.volume = 0f;
-        camera = GameObject.FindGameObjectWithTag("Camera");
+        camera = GameObject.FindGameObjectWithTag("GameCamera");
     }
 
     // Update is called once per frame
