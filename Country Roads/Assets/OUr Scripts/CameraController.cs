@@ -50,6 +50,23 @@ public class CameraController : MonoBehaviour
         return this.seeRadio;
     }
 
+	public bool isGhostSeen(string tag) {
+		RaycastHit hit;
+		bool GhostSeen = false;
+		if (Physics.Raycast(new Ray(transform.position, transform.forward), out hit, 100f))
+		{
+			if (hit.collider.tag == tag)
+			{
+				GhostSeen = true;
+			}
+			else
+			{
+				GhostSeen = false;
+			}
+		}
+		return GhostSeen;
+	}
+
     // Update is called once per frame
     void Update()
     {

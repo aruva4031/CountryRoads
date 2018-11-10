@@ -4,85 +4,86 @@ using UnityEngine;
 
 public class GhostChild : MonoBehaviour {
 
-    public Transform positionInCar;
-    public GameObject player;
-    float speed;
-    private bool isHaunting;
-    public bool hasSeen;
-    public AudioSource ghostSound;
-    public GameObject radio;
+	public Transform positionInCar;
+	public GameObject player;
+	float speed;
+	private bool isHaunting;
+	public bool hasSeen;
+	public AudioSource ghostSound;
+	public GameObject radio;
+	public int SanityLowerOnceAmount;
 	// Use this for initialization
 	void Start () {
-        //make ghost transparent
-        gameObject.GetComponentInChildren<Renderer>().material.color
-            =new Color(gameObject.GetComponentInChildren<Renderer>().material.color.r, gameObject.GetComponentInChildren<Renderer>().material.color.g, gameObject.GetComponentInChildren<Renderer>().material.color.b,0.5f);
-        //since ghost children should be cloned: find psoition in car and player on start
-        positionInCar = GameObject.Find("PositionInCar").transform;
-        player = GameObject.Find("Player");
-        //player is not haunting the ghost yet; haunts him when he sits in the car
-        isHaunting = false;
-        hasSeen = false;
-        //set the speed for moving towards player
-        speed = 0.1f;
-        ghostSound = GetComponent<AudioSource>();
-        radio = GameObject.FindGameObjectWithTag("Radio");
-    }
+		//make ghost transparent
+		gameObject.GetComponentInChildren<Renderer>().material.color
+		=new Color(gameObject.GetComponentInChildren<Renderer>().material.color.r, gameObject.GetComponentInChildren<Renderer>().material.color.g, gameObject.GetComponentInChildren<Renderer>().material.color.b,0.5f);
+		//since ghost children should be cloned: find psoition in car and player on start
+		positionInCar = GameObject.Find("PositionInCar").transform;
+		player = GameObject.Find("Player");
+		//player is not haunting the ghost yet; haunts him when he sits in the car
+		isHaunting = false;
+		hasSeen = false;
+		//set the speed for moving towards player
+		speed = 0.1f;
+		ghostSound = GetComponent<AudioSource>();
+		radio = GameObject.FindGameObjectWithTag("Radio");
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if the player is close, move towards it
-        if (Vector3.Distance(transform.position, player.transform.position) <= 10&&!hasSeen)
-        {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), speed);
-            //cast raycast towards player: if it sees the player, reduce sanity?
-            hasSeen = true;
-            GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerOnce();
-            /*if (Physics.Raycast(transform.position, player.transform.position, 10))
+	// Update is called once per frame
+	void Update()
+	{
+		//if the player is close, move towards it
+		if (Vector3.Distance(transform.position, player.transform.position) <= 10&&!hasSeen)
+		{
+			float step = speed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), speed);
+			//cast raycast towards player: if it sees the player, reduce sanity?
+			hasSeen = true;
+			GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerOnce(SanityLowerOnceAmount);
+			/*if (Physics.Raycast(transform.position, player.transform.position, 10))
             {
                 GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerOnce();
             }*/
-        }
-        else if(Vector3.Distance(transform.position, player.transform.position) > 10&&hasSeen==true)
-        {
-            hasSeen = false;
-        }
-        else if (!isHaunting)
-        {
-            GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
-        }
-        else if (isHaunting)
-        {
-            transform.position = positionInCar.position;
-            transform.rotation = positionInCar.rotation;
-            if (radio.GetComponent<Radio>().radioOn)
-            {
-                ghostSound.volume = 0.2f;
-            }
-            else if(!radio.GetComponent<Radio>().radioOn)
-            {
-                ghostSound.volume = 1f;
-            }
-        }
-    }
+		}
+		else if(Vector3.Distance(transform.position, player.transform.position) > 10&&hasSeen==true)
+		{
+			hasSeen = false;
+		}
+		else if (!isHaunting)
+		{
+			GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
+		}
+		else if (isHaunting)
+		{
+			transform.position = positionInCar.position;
+			transform.rotation = positionInCar.rotation;
+			if (radio.GetComponent<Radio>().radioOn)
+			{
+				ghostSound.volume = 0.2f;
+			}
+			else if(!radio.GetComponent<Radio>().radioOn)
+			{
+				ghostSound.volume = 1f;
+			}
+		}
+	}
 
-    public void startHaunting()
-    {
-        StartCoroutine(hauntPlayerInCar());
-    }
+	public void startHaunting()
+	{
+		StartCoroutine(hauntPlayerInCar());
+	}
 
 
-    public IEnumerator hauntPlayerInCar()
-    {
-        isHaunting = true;
-        GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = true;
-        ghostSound.Play();
-        transform.position = positionInCar.position;
-        transform.rotation = positionInCar.rotation;
-        //transform.LookAt(GameObject.Find("Player").transform);
-        yield return new WaitForSeconds(10);
-        GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
-        GameObject.Destroy(this.gameObject);
-    }
+	public IEnumerator hauntPlayerInCar()
+	{
+		isHaunting = true;
+		GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = true;
+		ghostSound.Play();
+		transform.position = positionInCar.position;
+		transform.rotation = positionInCar.rotation;
+		//transform.LookAt(GameObject.Find("Player").transform);
+		yield return new WaitForSeconds(10);
+		GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
+		GameObject.Destroy(this.gameObject);
+	}
 }

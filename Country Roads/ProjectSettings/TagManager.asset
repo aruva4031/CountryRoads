@@ -15,6 +15,7 @@ TagManager:
   - GPS
   - StalkerGhost
   - GameCamera
+  - SanityHandler
   layers:
   - Default
   - TransparentFX

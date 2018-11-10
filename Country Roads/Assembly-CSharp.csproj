@@ -53,10 +53,16 @@
   <ItemGroup>
      <Compile Include="Assets\OUr Scripts\CameraController.cs" />
      <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
+     <Compile Include="Assets\OUr Scripts\DeerEvent.cs" />
+     <Compile Include="Assets\OUr Scripts\GhostCar.cs" />
      <Compile Include="Assets\OUr Scripts\GhostChild.cs" />
-     <Compile Include="Assets\OUr Scripts\GhostchildPlayerCollision.cs" />
+     <Compile Include="Assets\OUr Scripts\NormalEvent.cs" />
+     <Compile Include="Assets\OUr Scripts\PlayerController.cs" />
+     <Compile Include="Assets\OUr Scripts\PlayerEventCollision.cs" />
      <Compile Include="Assets\OUr Scripts\Radio.cs" />
      <Compile Include="Assets\OUr Scripts\SanityMeter.cs" />
+     <Compile Include="Assets\OUr Scripts\StalkerGhostAI.cs" />
+     <Compile Include="Assets\OUr Scripts\SupernaturalEvent.cs" />
      <Compile Include="Assets\OUr Scripts\test1.cs" />
      <Compile Include="Assets\OUr Scripts\test2.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCHoodCamera.cs" />
@@ -167,6 +173,7 @@
      <Compile Include="Assets\RealisticCarControllerV3\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\RealisticCarControllerV3\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\StalkerGhost\SoldierFree\AttachWeapon.cs" />
      <Compile Include="Assets\Stellar Sky\Demo\CameraController.cs" />
      <None Include="Assets\RealisticCarControllerV3\Scripts\Skidmarks.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Effects\Projectors\Guidelines.txt" />
@@ -175,6 +182,7 @@
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\BloodCarEffect\RainNoDistortion.shader" />
+     <None Include="Assets\Materials\Ghost.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
@@ -188,7 +196,7 @@
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/xboxd/Desktop/CST426/CountryRoads/CountryRoads/Country Roads/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/xboxd/Desktop/CST426/CountryRoads/Country Roads/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
