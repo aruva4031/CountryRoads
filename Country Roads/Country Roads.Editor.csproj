@@ -313,6 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\BloodCarEffect\RainNoDistortion.shader" />
+    <None Include="Assets\Materials\Ghost.shader" />
     <None Include="Assets\RealisticCarControllerV3\LICENSE - Read Me!.txt" />
     <None Include="Assets\RealisticCarControllerV3\Scripts\Skidmarks.shader" />
     <None Include="Assets\RealisticCarControllerV3\Standard Assets\Cameras\CameraGuidelines.txt" />

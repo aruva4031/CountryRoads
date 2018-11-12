@@ -294,6 +294,7 @@
     <Compile Include="Assets\OUr Scripts\CameraController.cs" />
     <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
     <Compile Include="Assets\OUr Scripts\DeerEvent.cs" />
+    <Compile Include="Assets\OUr Scripts\GhostCar.cs" />
     <Compile Include="Assets\OUr Scripts\GhostChild.cs" />
     <Compile Include="Assets\OUr Scripts\NormalEvent.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerController.cs" />
@@ -417,6 +418,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\BloodCarEffect\RainNoDistortion.shader" />
+    <None Include="Assets\Materials\Ghost.shader" />
     <None Include="Assets\RealisticCarControllerV3\LICENSE - Read Me!.txt" />
     <None Include="Assets\RealisticCarControllerV3\Scripts\Skidmarks.shader" />
     <None Include="Assets\RealisticCarControllerV3\Standard Assets\Cameras\CameraGuidelines.txt" />
