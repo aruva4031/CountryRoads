@@ -294,6 +294,7 @@
     <Compile Include="Assets\OUr Scripts\CameraController.cs" />
     <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
     <Compile Include="Assets\OUr Scripts\DeerEvent.cs" />
+    <Compile Include="Assets\OUr Scripts\GenerateRoads.cs" />
     <Compile Include="Assets\OUr Scripts\GhostCar.cs" />
     <Compile Include="Assets\OUr Scripts\GhostChild.cs" />
     <Compile Include="Assets\OUr Scripts\NormalEvent.cs" />
@@ -303,8 +304,6 @@
     <Compile Include="Assets\OUr Scripts\SanityMeter.cs" />
     <Compile Include="Assets\OUr Scripts\StalkerGhostAI.cs" />
     <Compile Include="Assets\OUr Scripts\SupernaturalEvent.cs" />
-    <Compile Include="Assets\OUr Scripts\test1.cs" />
-    <Compile Include="Assets\OUr Scripts\test2.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCHoodCamera.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCResetScene.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCWheelCamera.cs" />
