@@ -44,16 +44,18 @@ public class BrightLight : MonoBehaviour {
 	void Update () {
         step = lightSpeed * Time.deltaTime;
         this.playerPos = player.transform.position;
-        this.lightEndPt = new Vector3(this.playerPos.x, this.playerPos.y + 2.0f, this.playerPos.z + 6.0f);
+        this.lightEndPt = new Vector3(this.playerPos.x, this.playerPos.y + 1.5f, this.playerPos.z + 5.0f);
 
 
         if (!triggerLight)
         {
             // move this sphere's position towards the player
             this.transform.position = Vector3.MoveTowards(this.transform.position, lightEndPt, step);
-            
+
+            Debug.Log("distance is: " + (this.transform.position.magnitude - this.playerPos.magnitude));
+
             // if the light is close enough to the player to start getting brighter
-            if ((this.transform.position.sqrMagnitude - this.playerPos.sqrMagnitude) <= 10)
+            if ((this.transform.position.magnitude - this.playerPos.magnitude) <= 5)
             {
                 Debug.Log("Near player's position");
                 triggerLight = true;
@@ -70,9 +72,10 @@ public class BrightLight : MonoBehaviour {
             Debug.Log("Light's pos: " + this.transform.position);
             Debug.Log("Player's pos: " + this.playerPos);
 
-            actualLight.range += 15f;
+            actualLight.range += 4f;
+            actualLight.intensity += 4f;
 
-            GameObject.DestroyObject(brightLight, 10f);
+            GameObject.DestroyObject(brightLight, 5f);
         }
     }
 }
