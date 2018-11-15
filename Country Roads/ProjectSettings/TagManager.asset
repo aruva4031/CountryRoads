@@ -16,6 +16,10 @@ TagManager:
   - StalkerGhost
   - GameCamera
   - SanityHandler
+  - straightRoad
+  - curvedroad
+  - GhostCar
+  - BrightLight
   layers:
   - Default
   - TransparentFX
