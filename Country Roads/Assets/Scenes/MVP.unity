@@ -6460,6 +6460,11 @@ Prefab:
       propertyPath: SanityLowerOnceAmount
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 82286006382653352, guid: 85dcba6fdbe5c634f9d9468e2c3e0843,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85dcba6fdbe5c634f9d9468e2c3e0843, type: 2}
   m_IsPrefabParent: 0

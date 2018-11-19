@@ -33,6 +33,10 @@ public class GhostCar : MonoBehaviour {
 			SanityHandler.GetComponent<SanityMeter>().lowerOnce(SanityLowerOnceAmount);
 			SpookeEm = true;
 		}
+        else
+        {
+            SanityHandler.GetComponent<SanityMeter>().lowerSanity=false;
+        }
 
 	}
 

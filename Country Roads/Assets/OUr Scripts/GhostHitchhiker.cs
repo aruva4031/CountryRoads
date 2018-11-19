@@ -44,6 +44,10 @@ public class GhostHitchhiker : MonoBehaviour {
             Debug.Log("Got in if statement");
             GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().sanityLowering(2);
         }
+        else
+        {
+            GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
+        }
         if (ghostInCar)
         {
             //transform.position = carPosition.transform.position;
