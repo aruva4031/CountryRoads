@@ -7559,7 +7559,7 @@ Prefab:
     - target: {fileID: 114964149497755430, guid: 78a697ad139d3aa45868c06b51f65baf,
         type: 2}
       propertyPath: speed
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114964149497755430, guid: 78a697ad139d3aa45868c06b51f65baf,
         type: 2}
@@ -19579,10 +19579,11 @@ GameObject:
   - component: {fileID: 2086978038}
   - component: {fileID: 2086978037}
   - component: {fileID: 2086978036}
+  - component: {fileID: 2086978040}
   - component: {fileID: 2086978039}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: RoadSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -19655,6 +19656,32 @@ MonoBehaviour:
   roads:
   - {fileID: 1552640156324516, guid: 71717d909e857ef4fa2a41af4cfffd7a, type: 2}
   - {fileID: 1558355212971992, guid: ac70097b87fd8cf4aa4b83cdb92d7225, type: 2}
+  copy_road: {fileID: 0}
+--- !u!114 &2086978040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2086978035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1433df53aed3f4f92dee57c0a4f709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roads: []
+  hasEvent: 
+  eventsGenerated: 0
+  normalProbability: 10
+  supernaturalProbability: 15
+  nothingProbability: 0
+  normalEvents:
+  - {fileID: 1907908355397186, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
+  supernaturalEvents:
+  - {fileID: 1294531073433632, guid: 78a697ad139d3aa45868c06b51f65baf, type: 2}
+  - {fileID: 1920787669514092, guid: 0aae9abae6a66724db0433045a6db911, type: 2}
+  - {fileID: 1011936786204212, guid: 6280bf8a305f10b45a55013950538c5b, type: 2}
+  - {fileID: 1236280322845978, guid: 85dcba6fdbe5c634f9d9468e2c3e0843, type: 2}
+  startingRoad: {fileID: 0}
 --- !u!1 &2088956056
 GameObject:
   m_ObjectHideFlags: 0
