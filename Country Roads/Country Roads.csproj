@@ -299,6 +299,7 @@
     <Compile Include="Assets\OUr Scripts\PlayerEventCollision.cs" />
     <Compile Include="Assets\OUr Scripts\Radio.cs" />
     <Compile Include="Assets\OUr Scripts\SanityMeter.cs" />
+    <Compile Include="Assets\OUr Scripts\SceneSelector.cs" />
     <Compile Include="Assets\OUr Scripts\StalkerGhostAI.cs" />
     <Compile Include="Assets\OUr Scripts\SupernaturalEvent.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCHoodCamera.cs" />

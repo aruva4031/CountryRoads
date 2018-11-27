@@ -16,7 +16,7 @@ public class GenerateRoads : MonoBehaviour {
 
 	private Vector3 getPoint1;
 
-	private GameObject copy_road;
+	public GameObject copy_road;
     public GameObject starting_road;
 	private GameObject previousRoad;
 	private int currentIndex;
