@@ -9,6 +9,7 @@ public class SanityMeter : MonoBehaviour {
 	public bool coroutine_running;
 	public GameObject bloodEffects;
 	public GameObject gameRadio;
+	public GameObject fireEffects;
     public bool sanityIncreasing;
 
 	// Use this for initialization
@@ -39,10 +40,6 @@ public class SanityMeter : MonoBehaviour {
 		{
 			sanityEvent (2);
 			coroutine_running = true;
-		}
-		else if (sanity > 45 && coroutine_running)
-		{
-			coroutine_running = false;
 		}
     }
 
@@ -125,6 +122,7 @@ public class SanityMeter : MonoBehaviour {
 		yield return new WaitForSeconds(10);
 		bloodEffects.SetActive(false);
 		sanity += 10;
+		coroutine_running = false;
 	}
 	//selector must be 2
 	public IEnumerator TalkativeRadio()
@@ -132,5 +130,30 @@ public class SanityMeter : MonoBehaviour {
 		gameRadio.GetComponent<Radio> ().SanityRadio ();
 		yield return new WaitForSeconds(gameRadio.GetComponent<Radio>().insaneRadio.clip.length);
 		sanity += 10;
+		coroutine_running = false;
+	}
+	//selector must be 3
+	public IEnumerator KnocksAndSounds() 
+	{
+		yield return new WaitForSeconds (10);
+		sanity += 10;
+		coroutine_running = false;
+	}
+	//selector must be 4
+	public IEnumerator RoadsOnFire()
+	{
+		fireEffects.SetActive (true);
+		yield return new WaitForSeconds (10);
+		sanity += 10;
+		coroutine_running = false;
+	}
+	//selector must be 5
+	public IEnumerator BrightLight()
+	{
+		yield return new WaitForSeconds (10);
+		sanity += 10;
+		coroutine_running = false;
+
+
 	}
 }

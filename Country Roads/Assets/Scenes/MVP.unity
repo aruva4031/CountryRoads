@@ -7871,6 +7871,16 @@ Prefab:
       propertyPath: m_Name
       value: Street1Lane40mwithTrees (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 23264362041727642, guid: 2d0259425139cb641b652bf72ece0528,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23264362041727642, guid: 2d0259425139cb641b652bf72ece0528,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a56fe6e4fa8c84149bff66bda55b7465, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d0259425139cb641b652bf72ece0528, type: 2}
   m_IsPrefabParent: 0
@@ -19664,7 +19674,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2086978035}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c1433df53aed3f4f92dee57c0a4f709, type: 3}
   m_Name: 
@@ -19852,7 +19862,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2139532166}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
