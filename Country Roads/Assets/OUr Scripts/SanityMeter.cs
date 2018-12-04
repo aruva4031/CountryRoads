@@ -164,10 +164,12 @@ public class SanityMeter : MonoBehaviour {
 	//selector must be 5
 	public IEnumerator BrightLight()
 	{
-        brightLight.GetComponent<BrightLight>().sanityIsLow = false;
-		yield return new WaitForSeconds (10);
+        brightLight.GetComponent<BrightLight>().sanityIsLow = true;
+		yield return new WaitForSeconds (3);
 		sanity += 10;
-		coroutine_running = false;
         brightLight.GetComponent<BrightLight>().isDone = true;
+        yield return new WaitForSeconds(1);
+        brightLight.GetComponent<BrightLight>().isDone = false;
+        coroutine_running = false;
     }
 }
