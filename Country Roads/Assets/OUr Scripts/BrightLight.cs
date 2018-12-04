@@ -47,7 +47,7 @@ public class BrightLight : MonoBehaviour
         // taken out because the light's starting position is above the player
         //this.lightEndPt = new Vector3(this.playerPos.x, this.playerPos.y + 3.0f, this.playerPos.z + 10.0f);
         this.startPos = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + -10);
-        this.transform.position = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + -10);
+        this.transform.position = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + 10);
 
         this.lightSpeed = 10f;
         this.step = 0f;
@@ -62,6 +62,7 @@ public class BrightLight : MonoBehaviour
     public void resetPos()
     {
         this.startPos = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + -10);
+        this.lightEndPt = new Vector3(this.playerPos.x, this.playerPos.y + 1.5f, this.playerPos.z + 5.0f);
         this.transform.position = this.startPos;
         this.GetComponent<Renderer>().enabled = true;
         this.triggerLight = false;
