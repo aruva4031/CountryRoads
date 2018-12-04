@@ -4742,12 +4742,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609027838}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 154.51976, y: 33.225784, z: 490.08887}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -44.770233, y: 32.865784, z: 217.02887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 826330170}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &609027843
 MonoBehaviour:
@@ -4765,9 +4765,17 @@ MonoBehaviour:
   actualLight: {fileID: 142044265}
   playerPos: {x: 0, y: 0, z: 0}
   lightEndPt: {x: 0, y: 0, z: 0}
+  startPos: {x: 0, y: 0, z: 0}
   lightSpeed: 0
   step: 0
+  startRange: 0
+  startIntensity: 0
+  timeInSec: 0
+  initalTime: 0
+  finalTime: 0
   triggerLight: 0
+  sanityIsLow: 0
+  isDone: 0
 --- !u!108 &609027844
 Light:
   m_ObjectHideFlags: 0
@@ -4779,7 +4787,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -5955,6 +5963,7 @@ Transform:
   - {fileID: 1361712922}
   - {fileID: 528251919}
   - {fileID: 1128980923}
+  - {fileID: 609027842}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6342,7 +6351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4317862378588290, guid: 3d4accee8a5fa404db7936bc4c163f7d, type: 2}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d4accee8a5fa404db7936bc4c163f7d, type: 2}

@@ -10,6 +10,7 @@ public class SanityMeter : MonoBehaviour {
 	public GameObject bloodEffects;
 	public GameObject gameRadio;
 	public GameObject fireEffects;
+    public GameObject brightLight;
     public bool sanityIncreasing;
 
 	// Use this for initialization
@@ -20,6 +21,10 @@ public class SanityMeter : MonoBehaviour {
 		bloodEffects = GameObject.FindWithTag("BloodEffect");
 		bloodEffects.SetActive(false);
 		gameRadio = GameObject.FindGameObjectWithTag("Radio");
+
+        // added BrightLight
+        brightLight = GameObject.FindGameObjectWithTag("BrightLight");
+
         sanityIncreasing = false;
 	}
 
@@ -37,9 +42,14 @@ public class SanityMeter : MonoBehaviour {
         GetComponent<UnityEngine.UI.Text>().text="Sanity: "+(int)sanity;
         //************************CHANGED END!!!!!!!!!!!*************************************************************************
         if (sanity <= 45&&!coroutine_running)
-		{
+		{/*
 			sanityEvent (2);
 			coroutine_running = true;
+            */
+            //Bright light test
+            sanityEvent(5);
+            coroutine_running = true;
+
 		}
     }
 
@@ -114,6 +124,10 @@ public class SanityMeter : MonoBehaviour {
 		else if (selector == 2) {
 			StartCoroutine (TalkativeRadio ());
 		}
+        else if (selector == 5)
+        {
+            StartCoroutine(BrightLight ());
+        }
 	}
 	//selector must be 1
 	public IEnumerator BloodyWindows()
@@ -150,10 +164,10 @@ public class SanityMeter : MonoBehaviour {
 	//selector must be 5
 	public IEnumerator BrightLight()
 	{
+        brightLight.GetComponent<BrightLight>().sanityIsLow = false;
 		yield return new WaitForSeconds (10);
 		sanity += 10;
 		coroutine_running = false;
-
-
-	}
+        brightLight.GetComponent<BrightLight>().isDone = true;
+    }
 }
