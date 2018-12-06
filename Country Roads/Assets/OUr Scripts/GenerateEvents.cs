@@ -114,7 +114,15 @@ public class GenerateEvents : MonoBehaviour
         Debug.Log("RE: " + randomEvent);
         if (randomEvent == supernaturalEvents.Length - 1)
         {
-            Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+            if (roads[index].gameObject.tag == "straightRoad")
+            {
+                Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+            }
+            else if(roads[index].gameObject.tag == "curvedroad")
+            {
+                Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y + 45, roads[index].transform.GetChild(0).transform.rotation.z));
+
+            }
         }
         else
         {
