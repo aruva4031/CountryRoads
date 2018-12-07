@@ -592,7 +592,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -688,3 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1419ef83b403a647b2309a19b32ace3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CarShutdownTime: 3
+  Duration: 3
+  speed: 2
+  SanityLowerOnceAmount: 5

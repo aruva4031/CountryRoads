@@ -20,8 +20,13 @@ TagManager:
   - curvedroad
   - GhostCar
   - BrightLight
+<<<<<<< HEAD
   - curvedroadleft
   - curvedroadright
+=======
+  - HikerInCar
+  - RoadSpawner
+>>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
   layers:
   - Default
   - TransparentFX

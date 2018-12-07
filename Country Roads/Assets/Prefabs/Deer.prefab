@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 95427423644332046}
   m_Layer: 0
   m_Name: Deer
-  m_TagString: Untagged
+  m_TagString: Deer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 4027718040942276}
   - component: {fileID: 137589305427693830}
   - component: {fileID: 65451684768628228}
+  - component: {fileID: 54209082213731576}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Deer
@@ -536,8 +537,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907908355397186}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 198.6, y: 1.01, z: 286.62}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 199.63, y: 2.01, z: 310.9}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4877827701589152}
   - {fileID: 4027718040942276}
@@ -832,7 +833,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207626803602982}
   m_LocalRotation: {x: -4.3297803e-17, y: 0.70710677, z: 0.7071069, w: -4.329781e-17}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4660371769518752}
@@ -854,6 +855,21 @@ Transform:
   m_Father: {fileID: 4724666795466546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54209082213731576
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968332449088820}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!65 &65451684768628228
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -875,7 +891,7 @@ Animator:
   m_GameObject: {fileID: 1907908355397186}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6b8c0979221f6894a80e7d207b766487, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72572ddee5eb44f4c86a3c264ca6df01, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
