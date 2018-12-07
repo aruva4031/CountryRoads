@@ -21,12 +21,15 @@ TagManager:
   - GhostCar
   - BrightLight
 <<<<<<< HEAD
+<<<<<<< HEAD
   - curvedroadleft
   - curvedroadright
 =======
   - HikerInCar
   - RoadSpawner
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     x: 0
     y: 43
+<<<<<<< HEAD
     width: 1536
     height: 781
 =======
@@ -24,6 +25,10 @@ MonoBehaviour:
     width: 1051
     height: 709
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    width: 1920
+    height: 997
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
@@ -49,12 +54,17 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1536
     height: 781
 =======
     width: 1051
     height: 709
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    width: 1920
+    height: 997
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
@@ -74,10 +84,14 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1536
 =======
     width: 1051
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    width: 1920
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -98,12 +112,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 761
     width: 1536
 =======
     y: 689
     width: 1051
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    y: 977
+    width: 1920
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -127,6 +146,7 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1536
     height: 731
   m_MinSize: {x: 787, y: 342}
@@ -141,6 +161,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 76
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    width: 1920
+    height: 947
+  m_MinSize: {x: 787, y: 342}
+  m_MaxSize: {x: 16012, y: 8042}
+  vertical: 0
+  controlID: 136
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,12 +186,17 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 326
     height: 731
 =======
     width: 325
     height: 659
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    width: 402
+    height: 947
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
@@ -188,13 +221,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 326
+=======
+    x: 402
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     y: 0
-    width: 762
-    height: 731
+    width: 966
+    height: 947
   m_MinSize: {x: 308, y: 342}
   m_MaxSize: {x: 8008, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 84
 =======
     x: 325
@@ -206,6 +244,9 @@ MonoBehaviour:
   vertical: 1
   controlID: 77
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+  controlID: 137
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,6 +266,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 762
     height: 430
   m_MinSize: {x: 308, y: 221}
@@ -239,6 +281,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 78
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    width: 966
+    height: 557
+  m_MinSize: {x: 308, y: 221}
+  m_MaxSize: {x: 8008, y: 4021}
+  vertical: 0
+  controlID: 138
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -256,12 +306,17 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 523
     height: 430
 =======
     width: 222
     height: 370
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    width: 596
+    height: 557
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
@@ -287,10 +342,14 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 523
+=======
+    x: 596
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     y: 0
-    width: 239
-    height: 430
+    width: 370
+    height: 557
   m_MinSize: {x: 104, y: 121}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 18}
@@ -323,9 +382,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 430
     width: 762
     height: 301
+=======
+    y: 557
+    width: 966
+    height: 390
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_MinSize: {x: 104, y: 121}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 19}
@@ -357,6 +422,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1088
     y: 0
     width: 448
@@ -367,6 +433,12 @@ MonoBehaviour:
     width: 302
     height: 659
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    x: 1368
+    y: 0
+    width: 552
+    height: 947
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 21}
@@ -478,11 +550,12 @@ MonoBehaviour:
 <<<<<<< HEAD
     x: 0
     y: 92
-    width: 324
-    height: 710
+    width: 400
+    height: 926
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 000cfdff
     m_LastClickedID: -193536
     m_ExpandedIDs: dc5dfeff9efbffff00000000403b0000
@@ -498,20 +571,25 @@ MonoBehaviour:
     m_LastClickedID: -14910
     m_ExpandedIDs: c8c5ffffaec8ffff00000000f05100000a520000
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 0cfaffff00000000f0430000
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: BrightLight
+      m_OriginalName: BrightLight
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 17392
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -572,19 +650,24 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 328
+=======
+    x: 404
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     y: 92
-    width: 519
-    height: 409
+    width: 592
+    height: 536
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 87440.81669786444
+  lastFramingTime: 639.1035254564324
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 275.79816, y: -153.76465, z: -235.23022}
+    m_Target: {x: 152.76935, y: 29.435303, z: 496.7088}
     speed: 2
+<<<<<<< HEAD
     m_Value: {x: 275.79816, y: -153.76465, z: -235.23022}
 =======
     x: 564
@@ -602,6 +685,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 77.932076, y: 156.67557, z: 0}
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    m_Value: {x: 152.76935, y: 29.435303, z: 496.7088}
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -626,12 +712,17 @@ MonoBehaviour:
       m_Value: 1
   m_Rotation:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -0.59794074, y: 0.29868844, z: -0.2556955, w: -0.6984783}
+=======
+    m_Target: {x: -0.23506655, y: 0.1442846, z: -0.035309047, w: -0.9605619}
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     speed: 2
-    m_Value: {x: -0.59794074, y: 0.29868844, z: -0.2556955, w: -0.6984783}
+    m_Value: {x: -0.23506652, y: 0.14428459, z: -0.035309043, w: -0.96056175}
   m_Size:
-    m_Target: 4987.4473
+    m_Target: 11.798718
     speed: 2
+<<<<<<< HEAD
     m_Value: 4987.4473
 =======
     m_Target: {x: 0, y: 0, z: 0, w: 1}
@@ -642,6 +733,9 @@ MonoBehaviour:
     speed: 2
     m_Value: 268.60056
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    m_Value: 11.798718
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -797,10 +891,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 851
+    x: 1000
     y: 92
-    width: 235
-    height: 409
+    width: 366
+    height: 536
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -810,10 +904,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -117.5
-    m_HBaseRangeMax: 117.5
-    m_VBaseRangeMin: -196
-    m_VBaseRangeMax: 196
+    m_HBaseRangeMin: -183
+    m_HBaseRangeMax: 183
+    m_VBaseRangeMin: -259.5
+    m_VBaseRangeMax: 259.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -830,25 +924,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 235
-      height: 392
+      width: 366
+      height: 519
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 117.5, y: 196}
+    m_Translation: {x: 183, y: 259.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -117.5
-      y: -196
-      width: 235
-      height: 392
+      x: -183
+      y: -259.5
+      width: 366
+      height: 519
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 235, y: 409}
+  m_LastWindowPixelSize: {x: 366, y: 536}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -877,6 +971,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 328
     y: 522
     width: 758
@@ -887,6 +982,12 @@ MonoBehaviour:
     width: 774
     height: 208
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    x: 404
+    y: 649
+    width: 962
+    height: 369
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &20
 MonoBehaviour:
@@ -911,6 +1012,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 328
     y: 522
     width: 758
@@ -921,6 +1023,12 @@ MonoBehaviour:
     width: 420
     height: 268
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    x: 273
+    y: 489
+    width: 642
+    height: 257
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -935,15 +1043,20 @@ MonoBehaviour:
     m_SearchArea: 0
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/StreetsV2.0
+=======
+    - Assets
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/StreetsV2.0
+  - Assets
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\FireRed\Desktop\CountryRoads\Country Roads
+  m_LastProjectPath: C:\Users\Jessica\Desktop\CountryRoads\Country Roads
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 77}
     m_SelectedIDs: 60350000
     m_LastClickedID: 13664
@@ -963,6 +1076,12 @@ MonoBehaviour:
     m_LastClickedID: 14422
     m_ExpandedIDs: 00000000e82800009e290000782b0000882b0000c62b0000182e00001a2e00000231000078310000ac31000080330000d83500009237000000ca9a3bffffff7f
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    scrollPos: {x: 0, y: 44}
+    m_SelectedIDs: e0280000
+    m_LastClickedID: 10464
+    m_ExpandedIDs: 00000000c43200007a330000483500005835000096350000e0370000e2370000c63a00003a3b00006e3b00003c3d00007c3f00002c410000
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -991,10 +1110,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000e2280000902900005e2b00006e2b0000ac2b0000fe2d0000002e0000e4300000583100008c3100005a330000a63500005a370000
 =======
     m_ExpandedIDs: 00000000e82800009e290000782b0000882b0000c62b0000182e00001a2e00000231000078310000ac31000080330000d835000092370000
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    m_ExpandedIDs: 00000000c43200007a330000483500005835000096350000e0370000e2370000c63a00003a3b00006e3b00003c3d00007c3f00002c410000
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1020,12 +1143,17 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: eed2fdff
     m_LastClickedInstanceID: -142610
 =======
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    m_SelectedInstanceIDs: 62a0ffff
+    m_LastClickedInstanceID: -24478
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 3a1d00006c220000c0adf4ff64220000102200001e33000022220000fc21000012a2fdff1e220000ae230000b223000014220000f221000006d4ffff08220000242200007a24000018240000c6300000683100001c270000f42500006a2600002c2800006e260000302800008a2700003a2f000070260000cc080000682600007e54000024590000323d00003c3b00009eb70000ee7f0000245d0000062a0000da2a0000f8860000862e0000ac610300000000005e380000
     m_RenameOverlay:
@@ -1077,6 +1205,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1090
     y: 92
     width: 446
@@ -1087,6 +1216,12 @@ MonoBehaviour:
     width: 300
     height: 638
 >>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+    x: 1370
+    y: 92
+    width: 550
+    height: 926
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
