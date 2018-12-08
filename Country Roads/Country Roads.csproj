@@ -294,6 +294,7 @@
     <Compile Include="Assets\OUr Scripts\GhostCar.cs" />
     <Compile Include="Assets\OUr Scripts\GhostChild.cs" />
     <Compile Include="Assets\OUr Scripts\GhostHitchhiker.cs" />
+    <Compile Include="Assets\OUr Scripts\GhostMusician.cs" />
     <Compile Include="Assets\OUr Scripts\NormalEvent.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerController.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerEventCollision.cs" />

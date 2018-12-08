@@ -7573,11 +7573,12 @@ MonoBehaviour:
   - {fileID: 1233730101}
   hasEvent: 
   eventsGenerated: 0
-  normalProbability: 1
-  supernaturalProbability: 100
+  normalProbability: 50
+  supernaturalProbability: 50
   nothingProbability: 0
   normalEvents:
   - {fileID: 1907908355397186, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
+  - {fileID: 1536488531620012, guid: 60a87789a5b12964f8fe33b42925c032, type: 2}
   supernaturalEvents:
   - {fileID: 1920787669514092, guid: 0aae9abae6a66724db0433045a6db911, type: 2}
   - {fileID: 1011936786204212, guid: 6280bf8a305f10b45a55013950538c5b, type: 2}
