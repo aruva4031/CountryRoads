@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\OUr Scripts\BrightLight.cs" />
      <Compile Include="Assets\OUr Scripts\CameraController.cs" />
      <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
      <Compile Include="Assets\OUr Scripts\DeerEvent.cs" />
