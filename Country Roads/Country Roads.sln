@@ -1,7 +1,19 @@
 ﻿
+<<<<<<< HEAD
+<<<<<<< HEAD
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Country Roads", "Assembly-CSharp.csproj", "{5FD51B42-7895-96F0-0C36-3534C9737097}"
+=======
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Country Roads", "Country Roads.csproj", "{3295228F-0D76-2D9C-1D67-02BA2C958EDA}"
+>>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Country Roads", "Country Roads.csproj", "{3295228F-0D76-2D9C-1D67-02BA2C958EDA}"
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Country Roads.Editor", "Country Roads.Editor.csproj", "{5A2FEA80-230D-E7C8-C540-5C1529922C9D}"
 EndProject

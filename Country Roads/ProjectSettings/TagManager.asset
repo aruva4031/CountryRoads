@@ -20,10 +20,21 @@ TagManager:
   - curvedroad
   - GhostCar
   - BrightLight
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - curvedroadleft
+  - curvedroadright
+=======
   - HikerInCar
   - RoadSpawner
+<<<<<<< HEAD
   - StartOptions
   - DifficultyOptions
+=======
+>>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
+=======
+>>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
+>>>>>>> 93abef7725de09c86cad30fa6be49e6f1e85fe21
   layers:
   - Default
   - TransparentFX
