@@ -290,6 +290,7 @@
     <Compile Include="Assets\OUr Scripts\CameraController.cs" />
     <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
     <Compile Include="Assets\OUr Scripts\DeerEvent.cs" />
+    <Compile Include="Assets\OUr Scripts\DifficultyChosen.cs" />
     <Compile Include="Assets\OUr Scripts\GenerateEvents.cs" />
     <Compile Include="Assets\OUr Scripts\GenerateRoads.cs" />
     <Compile Include="Assets\OUr Scripts\GhostCar.cs" />
