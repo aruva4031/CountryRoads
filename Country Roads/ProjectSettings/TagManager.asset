@@ -22,6 +22,8 @@ TagManager:
   - BrightLight
   - HikerInCar
   - RoadSpawner
+  - StartOptions
+  - DifficultyOptions
   layers:
   - Default
   - TransparentFX
