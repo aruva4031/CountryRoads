@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009256138, g: 0.009483897, b: 0.009256138, a: 1}
+  m_IndirectSpecularColor: {r: 0.00941084, g: 0.00950249, b: 0.00941084, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4574215375704706, guid: 66e7e737614ebc54d8fc0aca7b01a6e1, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1890900881672160, guid: 66e7e737614ebc54d8fc0aca7b01a6e1, type: 2}
       propertyPath: m_TagString
@@ -576,7 +576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4919934787378720, guid: c41e64190f229a249881b44732c7530d, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4919934787378720, guid: c41e64190f229a249881b44732c7530d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -889,7 +889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2cc6efd0975a2084caa41d70df3d3dc4, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2cc6efd0975a2084caa41d70df3d3dc4, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -997,7 +997,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4866676906775732, guid: 2d0259425139cb641b652bf72ece0528, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d0259425139cb641b652bf72ece0528, type: 2}
@@ -4811,7 +4811,6 @@ GameObject:
   - component: {fileID: 609027839}
   - component: {fileID: 609027843}
   - component: {fileID: 609027844}
-  - component: {fileID: 609027845}
   m_Layer: 0
   m_Name: BrightLight
   m_TagString: BrightLight
@@ -4882,17 +4881,8 @@ Transform:
   m_LocalPosition: {x: -44.770233, y: 32.865784, z: 217.02887}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-<<<<<<< HEAD
-  m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 22
-=======
   m_Father: {fileID: 826330170}
   m_RootOrder: 13
->>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
-=======
-  m_RootOrder: 21
->>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &609027843
 MonoBehaviour:
@@ -4908,8 +4898,6 @@ MonoBehaviour:
   player: {fileID: 826330167}
   brightLight: {fileID: 609027838}
   actualLight: {fileID: 142044265}
-  ringingNoise: {fileID: 0}
-  Ringing_Noise_Clip: {fileID: 0}
   playerPos: {x: 0, y: 0, z: 0}
   lightEndPt: {x: 0, y: 0, z: 0}
   startPos: {x: 0, y: 0, z: 0}
@@ -4920,9 +4908,9 @@ MonoBehaviour:
   timeInSec: 0
   initalTime: 0
   finalTime: 0
+  triggerLight: 0
   sanityIsLow: 0
   isDone: 0
-  isPlaying: 0
 --- !u!108 &609027844
 Light:
   m_ObjectHideFlags: 0
@@ -4959,86 +4947,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!82 &609027845
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 609027838}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9d9c4d25b278fe04483ab262eec96b19, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!1 &620864216
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,7 +5437,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4911427052740626, guid: 861e9970a18b2f143a86ba1ea09b21af, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 861e9970a18b2f143a86ba1ea09b21af, type: 2}
@@ -5571,19 +5479,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4730252449551592, guid: 0aae9abae6a66724db0433045a6db911, type: 2}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 10
-<<<<<<< HEAD
-=======
-      value: 9
->>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
-      objectReference: {fileID: 0}
-    - target: {fileID: 114627483590474508, guid: 0aae9abae6a66724db0433045a6db911,
-        type: 2}
-      propertyPath: SanityLowerOnceAmount
-      value: 5
-=======
->>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0aae9abae6a66724db0433045a6db911, type: 2}
@@ -6199,7 +6095,7 @@ Transform:
   - {fileID: 1128980923}
   - {fileID: 609027842}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &826330171
 MonoBehaviour:
@@ -6483,7 +6379,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4866676906775732, guid: 2d0259425139cb641b652bf72ece0528, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1704370863511768, guid: 2d0259425139cb641b652bf72ece0528, type: 2}
       propertyPath: m_Name
@@ -6607,7 +6503,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4557101408942214, guid: 416207e48e8167b4dbabebabdfb2c7ff, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4557101408942214, guid: 416207e48e8167b4dbabebabdfb2c7ff, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6707,7 +6603,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4351996795710124, guid: 85dcba6fdbe5c634f9d9468e2c3e0843, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114120553708375410, guid: 85dcba6fdbe5c634f9d9468e2c3e0843,
         type: 2}
@@ -6868,7 +6764,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4919934787378720, guid: c41e64190f229a249881b44732c7530d, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4919934787378720, guid: c41e64190f229a249881b44732c7530d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7476,7 +7372,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4919934787378720, guid: c41e64190f229a249881b44732c7530d, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4919934787378720, guid: c41e64190f229a249881b44732c7530d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7895,7 +7791,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4642125871221464, guid: 78a697ad139d3aa45868c06b51f65baf, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 114964149497755430, guid: 78a697ad139d3aa45868c06b51f65baf,
         type: 2}
@@ -8206,7 +8102,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4866676906775732, guid: 2d0259425139cb641b652bf72ece0528, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1704370863511768, guid: 2d0259425139cb641b652bf72ece0528, type: 2}
       propertyPath: m_Name
@@ -8439,123 +8335,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4190205840117104, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 3
-<<<<<<< HEAD
-=======
-      value: 2
->>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
-      objectReference: {fileID: 0}
-    - target: {fileID: 95427423644332046, guid: 3af64b87f3b9caf46b5728107845c8cd,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 72572ddee5eb44f4c86a3c264ca6df01, type: 2}
-    - target: {fileID: 4348900040261132, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.2632564e-14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4348900040261132, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.2257366
-      objectReference: {fileID: 0}
-    - target: {fileID: 4348900040261132, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.000000029802386
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966534129012862, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.3836312
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966534129012862, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.00000010144393
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966534129012862, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.00000004690119
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966534129012862, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9234864
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966534129012862, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190205840117104, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190205840117104, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4966534129012862, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.000000024619304
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078215024871296, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.07172399
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078215024871296, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.07172424
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078215024871296, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.70345986
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078215024871296, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7034597
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078215024871296, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544279290769868, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.05076692
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544279290769868, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9987106
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544279290769868, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455518794636122, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.050766893
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455518794636122, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9987106
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455518794636122, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190205840117104, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190205840117104, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190205840117104, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907908355397186, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
-      propertyPath: m_TagString
-      value: Deer
-=======
->>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
@@ -16171,7 +15951,7 @@ RectTransform:
   m_Children:
   - {fileID: 1758878660}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16313,7 +16093,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1943729175
 GameObject:
@@ -19848,7 +19628,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4557101408942214, guid: 416207e48e8167b4dbabebabdfb2c7ff, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4557101408942214, guid: 416207e48e8167b4dbabebabdfb2c7ff, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19921,7 +19701,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086978035
 GameObject:
@@ -19994,7 +19774,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2086978039
 MonoBehaviour:
@@ -20009,9 +19789,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roads:
   - {fileID: 1552640156324516, guid: 71717d909e857ef4fa2a41af4cfffd7a, type: 2}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   - {fileID: 1558355212971992, guid: ac70097b87fd8cf4aa4b83cdb92d7225, type: 2}
   copy_road: {fileID: 0}
   starting_road: {fileID: 0}
@@ -20039,10 +19816,6 @@ MonoBehaviour:
   - {fileID: 1920787669514092, guid: 0aae9abae6a66724db0433045a6db911, type: 2}
   - {fileID: 1011936786204212, guid: 6280bf8a305f10b45a55013950538c5b, type: 2}
   - {fileID: 1236280322845978, guid: 85dcba6fdbe5c634f9d9468e2c3e0843, type: 2}
->>>>>>> c7c52a8bbada48859d11354159529ef7bc443321
-=======
-  - {fileID: 1558355212971992, guid: ac70097b87fd8cf4aa4b83cdb92d7225, type: 2}
->>>>>>> parent of 4dd24fd... updates to the generate roads script - limmit amount of curved roads
 --- !u!1 &2088956056
 GameObject:
   m_ObjectHideFlags: 0

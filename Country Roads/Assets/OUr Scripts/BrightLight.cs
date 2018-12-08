@@ -13,10 +13,6 @@ public class BrightLight : MonoBehaviour
     public GameObject player;
     public GameObject brightLight;
     public Light actualLight;
-
-    public AudioSource ringingNoise;
-    public AudioClip Ringing_Noise_Clip;
-
     public Vector3 playerPos;
     public Vector3 lightEndPt;
     public Vector3 startPos;
@@ -25,7 +21,7 @@ public class BrightLight : MonoBehaviour
     public float step;
     public float startRange;
     public float startIntensity;
-
+    
     // the official time
     public float timeInSec;
 
@@ -34,9 +30,9 @@ public class BrightLight : MonoBehaviour
     public int finalTime;
 
     // trigger the light
+    public bool triggerLight;
     public bool sanityIsLow;
     public bool isDone;
-    public bool isPlaying;
 
     // Use this for initialization
     void Start()
@@ -45,38 +41,31 @@ public class BrightLight : MonoBehaviour
         this.brightLight = GameObject.FindGameObjectWithTag("BrightLight");
         this.actualLight = GetComponent<Light>();
 
-        this.ringingNoise = GetComponent<AudioSource>();
-        this.Ringing_Noise_Clip = GetComponent<AudioSource>().clip;
-
         /** remember that this is a Vector3 */
         this.playerPos = player.transform.position;
 
         // taken out because the light's starting position is above the player
         //this.lightEndPt = new Vector3(this.playerPos.x, this.playerPos.y + 3.0f, this.playerPos.z + 10.0f);
-        this.startPos = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + 10);
+        this.startPos = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + -10);
         this.transform.position = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + 10);
 
         this.lightSpeed = 10f;
         this.step = 0f;
-
+        this.triggerLight = false;
         this.sanityIsLow = false;
         this.isDone = false;
-        this.isPlaying = false;
 
         this.startRange = 5;
         this.startIntensity = 0;
     }
 
-    public void resetAll()
+    public void resetPos()
     {
-        this.actualLight.range = 5;
-        this.actualLight.intensity = 0;
-        this.GetComponent<Renderer>().enabled = false;
-        this.sanityIsLow = false;
-        this.startPos = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + 10);
+        this.startPos = new Vector3(this.playerPos.x, this.playerPos.y + 10, this.playerPos.z + -10);
         this.lightEndPt = new Vector3(this.playerPos.x, this.playerPos.y + 1.5f, this.playerPos.z + 5.0f);
         this.transform.position = this.startPos;
         this.GetComponent<Renderer>().enabled = true;
+        this.triggerLight = false;
     }
 
     // Update is called once per frame
@@ -85,30 +74,52 @@ public class BrightLight : MonoBehaviour
         step = lightSpeed * Time.deltaTime;
         this.playerPos = player.transform.position;
         this.lightEndPt = new Vector3(this.playerPos.x, this.playerPos.y + 1.5f, this.playerPos.z + 5.0f);
-        this.transform.localRotation = this.player.transform.rotation;
 
-        if (this.sanityIsLow)
+        if (!triggerLight)
         {
+            //Debug.Log("distance is: " + (this.transform.position.magnitude - this.playerPos.magnitude));
+
+            /*
+            // if the light is close enough to the player to start getting brighter
+            if ((this.transform.position.magnitude - this.playerPos.magnitude) <= 5)
+            {
+                Debug.Log("Near player's position");
+                triggerLight = true;
+            }*/
+            // check for sanity level
+
+
+            if (sanityIsLow)
+            {
+                this.triggerLight = true;
+            }
+        }
+        else
+        {
+            Debug.Log("Entered else");
+            //+ Vector3.RotateTowards(this.transform.position, this.playerPos, 1, 1)
             this.transform.position = Vector3.MoveTowards(this.transform.position, lightEndPt, step);
 
             // code to trigger brighter light
+            Debug.Log("AHHH IT'S TOO BRIGHT");
+            Debug.Log("Light's pos: " + this.transform.position);
+            Debug.Log("Player's pos: " + this.playerPos);
+
             actualLight.range += 2f;
             actualLight.intensity += 2f;
-
-            if (isPlaying)
-            {
-                ringingNoise.PlayOneShot(this.Ringing_Noise_Clip, 0.5f);
-                Debug.Log("is ringing noise playing?" + ringingNoise.isPlaying);
-                this.isPlaying = false;
-            }
 
             if (isDone)
             {
                 // after the length of the audio
-                // reset the Light
-                ringingNoise.Stop();
-                resetAll();
+                this.GetComponent<Renderer>().enabled = false;
+                triggerLight = false;
+                sanityIsLow = false;
+                this.actualLight.range = 5;
+                this.actualLight.intensity = 0;
+                // reset position
+                resetPos();
             }
+
         }
     }
 }
