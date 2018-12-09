@@ -1,30 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.UI;
 
 public class cr_controller : MonoBehaviour
 {
+    public CanvasGroup pause;
 
     public GameObject car;
     public AudioSource Radio;
     private bool Power = true;
 
-    //
+    //  Left Analog Stick Axises
     private float xbox_lsHaxis;
     private float xbox_lsVAxis;
     private bool xbox_ls;
-    //
+
+    // Right Analog Stick Axises
     private float xbox_rsHAxis;
     private float xbox_rsVAxis;
     private bool xbox_rs;
-    //
+
+    // Trigger Buttons
     private float xbox_lt;
     private float xbox_rt;
     private float xbox_triggers;
-    //
+
+    // D-Pad Buttons
     private float dhaxis;
     private float dvaxis;
-    //
+
+    // The Other XBox buttons
     private bool xbox_a;
     private bool xbox_b;
     private bool xbox_x;
@@ -33,10 +39,21 @@ public class cr_controller : MonoBehaviour
     private bool xbox_rb;
     private bool xbox_back;
     private bool xbox_start;
+
     //if car is manipulated by hitchhiker ghost, this will be true
     public bool car_manipulated;
     public float randomSteeringValue;
     public float accelerate;
+
+    // when the Start Button is pressed, make sure the Pause menu stays open
+    public bool stayPaused = false;
+
+    public void OnApplicationPause()
+    {
+        pause.alpha = 1;
+        pause.interactable = true;
+        Time.timeScale = 0f;
+    }
 
     public void CarShutdown(float time)
     {
@@ -72,6 +89,21 @@ public class cr_controller : MonoBehaviour
         xbox_rb = Input.GetButton("XboxRB");
         xbox_back = Input.GetButton("XboxBack");
         xbox_start = Input.GetButton("XboxStart");
+
+        /*
+        // pause the game
+        if (xbox_start)
+        {
+            stayPaused = true;
+            
+        }
+
+        // pause time itself!
+        if (stayPaused)
+        {
+            OnApplicationPause();
+        }
+        */
         if (Power)
         {
 
