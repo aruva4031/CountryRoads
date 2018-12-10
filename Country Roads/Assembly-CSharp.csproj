@@ -51,15 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DifficultyOptions.cs" />
      <Compile Include="Assets\OUr Scripts\BrightLight.cs" />
      <Compile Include="Assets\OUr Scripts\CameraController.cs" />
      <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
      <Compile Include="Assets\OUr Scripts\DeerEvent.cs" />
+     <Compile Include="Assets\OUr Scripts\DifficultyChosen.cs" />
      <Compile Include="Assets\OUr Scripts\GenerateEvents.cs" />
      <Compile Include="Assets\OUr Scripts\GenerateRoads.cs" />
      <Compile Include="Assets\OUr Scripts\GhostCar.cs" />
      <Compile Include="Assets\OUr Scripts\GhostChild.cs" />
      <Compile Include="Assets\OUr Scripts\GhostHitchhiker.cs" />
+     <Compile Include="Assets\OUr Scripts\GhostMusician.cs" />
      <Compile Include="Assets\OUr Scripts\NormalEvent.cs" />
      <Compile Include="Assets\OUr Scripts\PlayerController.cs" />
      <Compile Include="Assets\OUr Scripts\PlayerEventCollision.cs" />
@@ -199,7 +202,7 @@
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\RealisticCarControllerV3\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/xboxd/Desktop/CountryRoads/Country Roads/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/xboxd/Desktop/Test/CountryRoads/Country Roads/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
