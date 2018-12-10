@@ -134,3 +134,4 @@ C:\Users\xboxd\Desktop\CST426\CountryRoads\Country Roads\Temp\bin\Debug\UnityEdi
 C:\Users\xboxd\Desktop\CST426\CountryRoads\Country Roads\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
 C:\Users\xboxd\Desktop\CST426\CountryRoads\Country Roads\obj\Debug\Assembly-CSharp.dll
 C:\Users\xboxd\Desktop\CST426\CountryRoads\Country Roads\obj\Debug\Assembly-CSharp.pdb
+C:\Users\xboxd\Desktop\Test\CountryRoads\Country Roads\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
