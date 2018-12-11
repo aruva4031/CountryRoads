@@ -8194,7 +8194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0185a36441a48b94493e6de5d3dde7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 0}
+  pause: {fileID: 1433319862}
   car: {fileID: 826330167}
   Radio: {fileID: 672396769}
   car_manipulated: 0
