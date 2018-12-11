@@ -87,10 +87,9 @@ public class CameraController : MonoBehaviour
         // set the timeInSec here
         this.timeInSec = timeInSec + Time.deltaTime;
 
-        horizontalRS = Input.GetAxis("HorizontalRS") * 90;
-        verticalRS = Input.GetAxis("VerticalRS") * 45;
+        horizontalRS = Input.GetAxis("HorizontalRS") * 80;
+        verticalRS = Input.GetAxis("VerticalRS") * 20;
 
-        //look = Quaternion.Euler(transform.rotation.x + verticalRS, transform.rotation.y + horizontalRS, transform.rotation.z + 0);
         look = Quaternion.Euler(transform.localRotation.x + verticalRS, transform.localRotation.y + horizontalRS, transform.localRotation.z + 0);
         if (GameObject.FindWithTag("StalkerGhost").GetComponent<StalkerGhostAI>().stopMovement == false)
         {
@@ -98,7 +97,6 @@ public class CameraController : MonoBehaviour
             if (this.horizontalRS >= 0.8 || this.horizontalRS <= -0.8 || this.verticalRS >= 0.8 || this.verticalRS <= -0.8)
             {
                 // if the player is not looking around
-                //  transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime * 3f);
                 transform.localRotation = Quaternion.Slerp(transform.localRotation, look, Time.deltaTime * 3f);
 
                 // set the initial time by the seconds
@@ -110,10 +108,7 @@ public class CameraController : MonoBehaviour
             else
             {
                 this.initalTime = (int)(this.timeInSec);
-
-                // Debug.Log("## Initial Time is: " + this.initalTime);
-                // Debug.Log("## Final Time is: " + this.finalTime);
-
+                
                 if (this.initalTime == this.finalTime)
                 {
                     // if the player is not looking around
