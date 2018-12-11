@@ -48,12 +48,22 @@ public class cr_controller : MonoBehaviour
     // when the Start Button is pressed, make sure the Pause menu stays open
     public bool stayPaused = false;
 
-    public void OnApplicationPause()
+    public void pauseMenuOn()
     {
         pause.alpha = 1;
         pause.interactable = true;
         Time.timeScale = 0f;
+        stayPaused = true;
     }
+
+    public void pauseMenuOff()
+    {
+        pause.alpha = 0;
+        pause.interactable = false;
+        Time.timeScale = 1f;
+        stayPaused = false;
+    }
+
 
     public void CarShutdown(float time)
     {
@@ -90,7 +100,7 @@ public class cr_controller : MonoBehaviour
         xbox_back = Input.GetButton("XboxBack");
         xbox_start = Input.GetButton("XboxStart");
 
-        /*
+        
         // pause the game
         if (xbox_start)
         {
@@ -101,9 +111,9 @@ public class cr_controller : MonoBehaviour
         // pause time itself!
         if (stayPaused)
         {
-            OnApplicationPause();
+            pauseMenuOn();
         }
-        */
+        
         if (Power)
         {
 

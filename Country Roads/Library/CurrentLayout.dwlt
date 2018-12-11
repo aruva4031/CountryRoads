@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 787, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 76
+  controlID: 74
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 308, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 77
+  controlID: 75
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_MinSize: {x: 308, y: 221}
   m_MaxSize: {x: 8008, y: 4021}
   vertical: 0
-  controlID: 78
+  controlID: 76
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -347,18 +347,18 @@ MonoBehaviour:
       y: 17
       width: 509
       height: 297
-    m_Scale: {x: 1.1900619, y: 1.1900619}
-    m_Translation: {x: 280.6213, y: 137.32443}
+    m_Scale: {x: 1.0861374, y: 1.0861374}
+    m_Translation: {x: 276.42197, y: 144.54424}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -235.80396
-      y: -115.39268
-      width: 427.70883
-      height: 249.56685
+      x: -254.5
+      y: -133.08098
+      width: 468.63315
+      height: 273.44608
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
@@ -396,23 +396,23 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000d83c0000383e0000863e0000
+    m_SelectedIDs: c84c0000
+    m_LastClickedID: 19656
+    m_ExpandedIDs: 6eefffff000000001c4c0000da4c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: StalkerGhost
-      m_OriginalName: StalkerGhost
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -7890
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -478,14 +478,14 @@ MonoBehaviour:
     height: 314
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 5273.5671594752075
+  lastFramingTime: 476.06769617032126
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 200.40639, y: -0.25, z: 261.9787}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 200.40639, y: -0.25, z: 261.9787}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -511,11 +511,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.0847787, y: 0.84012675, z: -0.5177606, w: 0.13756339}
     speed: 2
-    m_Value: {x: 0.0847787, y: 0.84012675, z: -0.5177606, w: 0.13756339}
+    m_Value: {x: 0.0847787, y: 0.8401268, z: -0.5177606, w: 0.13756339}
   m_Size:
-    m_Target: 31.715332
+    m_Target: 22
     speed: 2
-    m_Value: 31.715332
+    m_Value: 22
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -714,19 +714,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Audio/FinalAudio
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Audio/FinalAudio
+  - Assets
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\Julia\Documents\CST426\CountryRoads\Country Roads
+  m_LastProjectPath: C:\Users\jemub\Desktop\CountryRoads\Country Roads
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 142}
-    m_SelectedIDs: f4370000
-    m_LastClickedID: 14324
-    m_ExpandedIDs: 00000000f4280000aa290000842b0000942b0000d22b0000e02d00002e2e0000302e00001a31000094310000c8310000a0330000fe35000026360000e237000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 4c390000
+    m_LastClickedID: 14668
+    m_ExpandedIDs: 000000004c390000003a0000ce3b0000da3b0000143c0000043e0000503e0000523e00002c410000a2410000d441000090430000d0450000f84500006847000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -754,7 +754,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f4280000aa290000842b0000942b0000d22b00002e2e0000302e00001a31000094310000c8310000a0330000fe35000026360000e2370000
+    m_ExpandedIDs: 000000004c390000003a0000ce3b0000da3b0000143c0000043e0000503e0000523e00002c410000a2410000d441000090430000d0450000f845000068470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -781,7 +781,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 3a1d00006c220000c0adf4ff64220000102200001e33000022220000fc21000012a2fdff1e220000ae230000b223000014220000f221000006d4ffff08220000242200007a24000018240000c6300000683100001c270000f42500006a2600002c2800006e260000302800008a2700003a2f000070260000cc080000682600007e54000024590000323d00003c3b00009eb70000ee7f0000245d0000062a0000da2a0000f8860000862e0000ac610300000000005e380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -836,7 +836,7 @@ MonoBehaviour:
     width: 321
     height: 598
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 335.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 100
