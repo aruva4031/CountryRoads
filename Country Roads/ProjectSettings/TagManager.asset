@@ -22,6 +22,7 @@ TagManager:
   - BrightLight
   - HikerInCar
   - RoadSpawner
+  - tree
   layers:
   - Default
   - TransparentFX

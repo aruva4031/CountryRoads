@@ -8,6 +8,7 @@ public class GenerateEvents : MonoBehaviour
     System.Random rand = new System.Random();
     public GameObject[] roads;
     public bool[] hasEvent;
+    public int eventNumber;
     public bool eventsGenerated;
     public int normalProbability, supernaturalProbability, nothingProbability;
     public GameObject[] normalEvents;
@@ -27,6 +28,7 @@ public class GenerateEvents : MonoBehaviour
             supernaturalProbability = 15;
         }
         nothingProbability = 100 - normalProbability - supernaturalProbability;
+        //deactivateAllTrees();
         //startingRoad= GameObject.FindWithTag("RoadSpawner").GetComponent<GenerateRoads>().copy_road;
     }
 
@@ -52,26 +54,23 @@ public class GenerateEvents : MonoBehaviour
             generateEvents();
         }
     }
+
+    void deactivateAllTrees()
+    {
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("tree");
+        foreach(GameObject tree in trees)
+        {
+            tree.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            tree.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
     void generateEvents()
     {
         for (int i = 0; i < roads.Length; i++)
         {
             if ((i > 0 && enoughRoadDistance(i)) || (i == 0))
             {
-                int randomChance = rand.Next(0, 100);
-                Debug.Log("Random Chance: " + randomChance);
-                if (randomChance <= normalProbability)
-                {
-                    Debug.Log("Generating normal event");
-                    generateNormalEvent(i);
-                    hasEvent[i] = true;
-                }
-                else if (randomChance <= (normalProbability + supernaturalProbability))
-                {
-                    Debug.Log("Generating supernatural event");
-                    generateSupernaturalEvent(i);
-                    hasEvent[i] = true;
-                }
+                generateSingleEvent(i);
             }
         }
         eventsGenerated = true;
@@ -95,12 +94,15 @@ public class GenerateEvents : MonoBehaviour
 
     void generateNormalEvent(int index)
     {
+        GameObject instance;
         int randomEvent = rand.Next(0, normalEvents.Length);
-        Instantiate(normalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, normalEvents[randomEvent].transform.rotation);
+        instance=Instantiate(normalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, normalEvents[randomEvent].transform.rotation);
+        instanceSetup(instance, index);
     }
 
     void generateSupernaturalEvent(int index)
     {
+        GameObject instance;
         int randomEvent = -1;
         Debug.Log("SL: " + supernaturalEvents.Length);
         if (ghostCarCanSpawnHere(index))
@@ -116,17 +118,27 @@ public class GenerateEvents : MonoBehaviour
         {
             if (roads[index].gameObject.tag == "straightRoad")
             {
-                Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+                instanceSetup(instance, index);
             }
             else if(roads[index].gameObject.tag == "curvedroad")
             {
-                Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y + 45, roads[index].transform.GetChild(0).transform.rotation.z));
-
+                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y + 45, roads[index].transform.GetChild(0).transform.rotation.z));
+                instanceSetup(instance, index);
             }
         }
         else
         {
-            Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation);
+            instance=Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation);
+            instanceSetup(instance, index);
+        }
+    }
+    void instanceSetup(GameObject instance,int index)
+    {
+        if (instance != null)
+        {
+            instance.GetComponent<ObserveableManager>().index = index;
+            instance.GetComponent<ObserveableManager>().eventGenerator = this.gameObject.GetComponent<GenerateEvents>();
         }
     }
 
@@ -140,5 +152,23 @@ public class GenerateEvents : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void generateSingleEvent(int index)
+    {
+        int randomChance = rand.Next(0, 100);
+        Debug.Log("Random Chance: " + randomChance);
+        if (randomChance <= normalProbability)
+        {
+            Debug.Log("Generating normal event");
+            generateNormalEvent(index);
+            hasEvent[index] = true;
+        }
+        else if (randomChance <= (normalProbability + supernaturalProbability))
+        {
+            Debug.Log("Generating supernatural event");
+            generateSupernaturalEvent(index);
+            hasEvent[index] = true;
+        }
     }
 }

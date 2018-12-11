@@ -395,6 +395,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4190205840117104}
   - component: {fileID: 95427423644332046}
+  - component: {fileID: 65003008360130660}
+  - component: {fileID: 114171168980832624}
   m_Layer: 0
   m_Name: Deer
   m_TagString: Deer
@@ -441,7 +443,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4027718040942276}
   - component: {fileID: 137589305427693830}
-  - component: {fileID: 65451684768628228}
   - component: {fileID: 54209082213731576}
   m_Layer: 0
   m_Name: Cube.001
@@ -870,18 +871,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &65451684768628228
+--- !u!65 &65003008360130660
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1968332449088820}
+  m_GameObject: {fileID: 1907908355397186}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6201901, y: 1.8316748, z: 1.7488353}
-  m_Center: {x: -0.000000032919736, y: 0.20325458, z: -0.07330331}
+  m_Size: {x: 4.91, y: 11.050001, z: 13.565771}
+  m_Center: {x: -0.83, y: 5.68, z: -0.67}
 --- !u!95 &95427423644332046
 Animator:
   serializedVersion: 3
@@ -899,6 +900,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114171168980832624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907908355397186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712ab897cb395124081636ee1b21f907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGhost: 0
 --- !u!137 &137589305427693830
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

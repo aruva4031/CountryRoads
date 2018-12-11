@@ -18,11 +18,11 @@ public class GhostMusician : MonoBehaviour {
 	void Update () {
 		if((Vector3.Distance(transform.position,new Vector3(GameObject.Find("Radio").transform.position.x,transform.position.y, GameObject.Find("Radio").transform.position.z)) < inRange) && GameObject.Find("Radio").GetComponent<Radio>().radioOn)
         {
-            StartCoroutine(musicianCarHaunt()){
+            //StartCoroutine(musicianCarHaunt()){
 
-            }
+            //}
         }
 	}
 
-    IEnumerator musicianCar
+    //IEnumerator musicianCar
 }

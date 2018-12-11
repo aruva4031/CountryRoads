@@ -28,6 +28,18 @@ public class GhostHitchhiker : MonoBehaviour {
         audio_running = false;
     }
 
+    void Awake()
+    {
+        meshObject = gameObject.transform.Find("Men_4").gameObject;
+        carPosition = GameObject.Find("CarPosition");
+        //ghostInCar = false;
+        car = GameObject.Find("Player");
+        randomSteeringValue = 0;
+        coroutine_running = false;
+        ghostSource = GetComponent<AudioSource>();
+        audio_running = false;
+    }
+
     // Update is called once per frame
     void Update() {
         bool isSeen = lookForPlayer();
@@ -200,6 +212,7 @@ public class GhostHitchhiker : MonoBehaviour {
             playRandomEvent((int)b[i]);
             yield return new WaitForSeconds(3f);
         }
+        gameObject.transform.parent.GetComponent<ObserveableManager>().hikerDone = true;
     }
 
     IEnumerator ghostStops()

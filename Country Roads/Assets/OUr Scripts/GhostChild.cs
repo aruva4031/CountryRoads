@@ -15,8 +15,8 @@ public class GhostChild : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//make ghost transparent
-		gameObject.GetComponentInChildren<Renderer>().material.color
-		=new Color(gameObject.GetComponentInChildren<Renderer>().material.color.r, gameObject.GetComponentInChildren<Renderer>().material.color.g, gameObject.GetComponentInChildren<Renderer>().material.color.b,0.5f);
+		//gameObject.GetComponentInChildren<Renderer>().material.color
+		//=new Color(gameObject.GetComponentInChildren<Renderer>().material.color.r, gameObject.GetComponentInChildren<Renderer>().material.color.g, gameObject.GetComponentInChildren<Renderer>().material.color.b,0.5f);
 		//since ghost children should be cloned: find psoition in car and player on start
 		positionInCar = GameObject.Find("PositionInCar").transform;
 		player = GameObject.Find("Player");
@@ -26,11 +26,28 @@ public class GhostChild : MonoBehaviour {
 		//set the speed for moving towards player
 		speed = 0.1f;
 		ghostSound = GetComponent<AudioSource>();
-		radio = GameObject.FindGameObjectWithTag("Radio");
+		radio = GameObject.Find("Radio");
 	}
 
-	// Update is called once per frame
-	void Update()
+    void Awake()
+    {
+        //make ghost transparent
+        //gameObject.GetComponentInChildren<Renderer>().material.color
+        //=new Color(gameObject.GetComponentInChildren<Renderer>().material.color.r, gameObject.GetComponentInChildren<Renderer>().material.color.g, gameObject.GetComponentInChildren<Renderer>().material.color.b,0.5f);
+        //since ghost children should be cloned: find psoition in car and player on start
+        positionInCar = GameObject.Find("PositionInCar").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
+        //player is not haunting the ghost yet; haunts him when he sits in the car
+        isHaunting = false;
+        hasSeen = false;
+        //set the speed for moving towards player
+        speed = 0.1f;
+        ghostSound = GetComponent<AudioSource>();
+        radio = GameObject.FindGameObjectWithTag("Radio");
+    }
+
+    // Update is called once per frame
+    void Update()
 	{
 		//if the player is close, move towards it
 		if (Vector3.Distance(transform.position, player.transform.position) <= 10&&!hasSeen)
@@ -84,6 +101,7 @@ public class GhostChild : MonoBehaviour {
 		//transform.LookAt(GameObject.Find("Player").transform);
 		yield return new WaitForSeconds(10);
 		GameObject.Find("SanityMeter").GetComponentInChildren<SanityMeter>().lowerSanity = false;
-		GameObject.Destroy(this.gameObject);
+        gameObject.transform.parent.GetComponent<ObserveableManager>().eventGenerator.generateSingleEvent(gameObject.transform.parent.GetComponent<ObserveableManager>().index);
+		GameObject.Destroy(this.gameObject.transform.parent);
 	}
 }
