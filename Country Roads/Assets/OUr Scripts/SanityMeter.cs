@@ -148,6 +148,7 @@ public class SanityMeter : MonoBehaviour
     public IEnumerator TalkativeRadio()
     {
         gameRadio.GetComponent<Radio>().SanityRadio();
+        GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
         yield return new WaitForSeconds(gameRadio.GetComponent<Radio>().insaneRadio.clip.length);
         sanity += 10;
         coroutine_running = false;

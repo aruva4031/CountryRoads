@@ -347,18 +347,18 @@ MonoBehaviour:
       y: 17
       width: 509
       height: 297
-    m_Scale: {x: 1.06, y: 1.06}
-    m_Translation: {x: 269.77, y: 146.01001}
+    m_Scale: {x: 1.1900619, y: 1.1900619}
+    m_Translation: {x: 280.6213, y: 137.32443}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -254.5
-      y: -137.7453
-      width: 480.1887
-      height: 280.1887
+      x: -235.80396
+      y: -115.39268
+      width: 427.70883
+      height: 249.56685
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
@@ -398,21 +398,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000
+    m_ExpandedIDs: 9efbffff00000000d83c0000383e0000863e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: StalkerGhost
+      m_OriginalName: StalkerGhost
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -7890
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -478,14 +478,14 @@ MonoBehaviour:
     height: 314
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 3159.5561481240734
+  lastFramingTime: 5273.5671594752075
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 300.15723, y: -760.02185, z: -422.3821}
+    m_Target: {x: 200.40639, y: -0.25, z: 261.9787}
     speed: 2
-    m_Value: {x: 300.15723, y: -760.02185, z: -422.3821}
+    m_Value: {x: 200.40639, y: -0.25, z: 261.9787}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -509,13 +509,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.030181078, y: -0.91340137, z: 0.40004814, w: -0.068910256}
+    m_Target: {x: 0.0847787, y: 0.84012675, z: -0.5177606, w: 0.13756339}
     speed: 2
-    m_Value: {x: 0.03018108, y: 0.91340137, z: -0.40004814, w: 0.068910256}
+    m_Value: {x: 0.0847787, y: 0.84012675, z: -0.5177606, w: 0.13756339}
   m_Size:
-    m_Target: 1209.3815
+    m_Target: 31.715332
     speed: 2
-    m_Value: 1209.3815
+    m_Value: 31.715332
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -726,7 +726,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 142}
     m_SelectedIDs: f4370000
     m_LastClickedID: 14324
-    m_ExpandedIDs: 00000000f4280000aa290000842b0000942b0000d22b00002e2e0000302e00001a31000094310000c8310000a0330000fe35000026360000e237000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000f4280000aa290000842b0000942b0000d22b0000e02d00002e2e0000302e00001a31000094310000c8310000a0330000fe35000026360000e237000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -785,18 +785,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 3a1d00006c220000c0adf4ff64220000102200001e33000022220000fc21000012a2fdff1e220000ae230000b223000014220000f221000006d4ffff08220000242200007a24000018240000c6300000683100001c270000f42500006a2600002c2800006e260000302800008a2700003a2f000070260000cc080000682600007e54000024590000323d00003c3b00009eb70000ee7f0000245d0000062a0000da2a0000f8860000862e0000ac610300000000005e380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GS2
-      m_OriginalName: GS2
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 12628
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:

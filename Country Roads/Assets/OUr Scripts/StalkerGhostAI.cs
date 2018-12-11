@@ -93,7 +93,7 @@ public class StalkerGhostAI : MonoBehaviour {
         GameObject.FindWithTag("Camera").GetComponent<Animator>().SetBool("playerDies",true);
         deathSource.Stop();
         deathSource.loop = false;
-        deathSource.clip = ghostWail;
+        deathSource.clip = GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
         deathSource.Play();
         isKilled = true;
         yield return new WaitForSeconds(deathScream.length+ghostWail.length);

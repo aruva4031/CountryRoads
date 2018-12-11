@@ -220,7 +220,7 @@ public class GhostHitchhiker : MonoBehaviour {
         audio_running = true;
         ghostSource.clip = ghostClips[Random.Range(0, ghostClips.Length-1)];
         ghostSource.Play();
-        yield return new WaitForSeconds(ghostSource.clip.length+0.2f);
+        yield return new WaitForSeconds(ghostSource.clip.length);
         this.gameObject.SetActive(false);
     }
 }

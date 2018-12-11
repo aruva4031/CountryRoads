@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 4859458441030066}
   - component: {fileID: 111936555644913422}
   - component: {fileID: 136544683426779920}
+  - component: {fileID: 114621216895338534}
   - component: {fileID: 114678327235353030}
   - component: {fileID: 82000102564202064}
   m_Layer: 0
@@ -1428,8 +1429,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGhost: 1
+  isHitchhiker: 0
+  hikerDone: 0
+  triggerDone: 0
   eventGenerator: {fileID: 0}
   index: 0
+--- !u!114 &114621216895338534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951917334922096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1c15e7eccd4a44393e505b6d8c6b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSource: {fileID: 82000102564202064}
+  soundClips:
+  - {fileID: 8300000, guid: 938297f17b84c724fbb3a417c6cbcfbb, type: 3}
+  - {fileID: 8300000, guid: f68ae15688f72be46ae22e778bd62f0c, type: 3}
 --- !u!114 &114678327235353030
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -303,6 +303,7 @@
     <Compile Include="Assets\OUr Scripts\PlayerController.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerEventCollision.cs" />
     <Compile Include="Assets\OUr Scripts\Radio.cs" />
+    <Compile Include="Assets\OUr Scripts\RandomAudioClip.cs" />
     <Compile Include="Assets\OUr Scripts\RoadCollisionDetector.cs" />
     <Compile Include="Assets\OUr Scripts\SanityMeter.cs" />
     <Compile Include="Assets\OUr Scripts\SceneSelector.cs" />
