@@ -11,7 +11,7 @@ public class ObserveableManager : MonoBehaviour {
     public bool triggerDone;
     public GenerateEvents eventGenerator;
     public int index=-1;
-    public bool musicianHeard=false;
+    public bool musicianHeard;
 
     // Use this for initialization
     void Start () {
@@ -54,7 +54,10 @@ public class ObserveableManager : MonoBehaviour {
         if (this.gameObject.tag == "tree"&& other.gameObject.tag == "Player")
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+            if (this.gameObject.transform.GetChild(0))
+            {
+                this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+            }
         }
     }
 
@@ -72,7 +75,10 @@ public class ObserveableManager : MonoBehaviour {
         if(this.gameObject.tag == "tree"&& other.gameObject.tag == "Player")
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+            if (this.gameObject.transform.GetChild(0))
+            {
+                this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+            }
         }
     }
 

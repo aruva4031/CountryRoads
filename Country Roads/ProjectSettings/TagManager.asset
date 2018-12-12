@@ -23,6 +23,7 @@ TagManager:
   - HikerInCar
   - RoadSpawner
   - tree
+  - Pose2
   layers:
   - Default
   - TransparentFX

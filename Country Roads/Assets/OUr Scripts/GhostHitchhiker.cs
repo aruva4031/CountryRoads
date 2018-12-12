@@ -26,6 +26,8 @@ public class GhostHitchhiker : MonoBehaviour {
         coroutine_running = false;
         ghostSource = GetComponent<AudioSource>();
         audio_running = false;
+        pose2 = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().hikerPose2;
+        carPosition = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().carPosition;
     }
 
     void Awake()

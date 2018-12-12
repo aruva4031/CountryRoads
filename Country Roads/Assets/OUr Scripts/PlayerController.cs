@@ -20,17 +20,35 @@ public class PlayerController : MonoBehaviour {
         
 	}
 
-    public void decreaseCarDamage()
+    public int decreaseBy(float magnitude)
     {
+        if (magnitude > 15)
+        {
+            return 3;
+        }
+        else if (magnitude > 5)
+        {
+            return 2;
+        }
+        return 1;
+    }
+
+    public void decreaseCarDamage(float magnitude)
+    {
+        Debug.Log("magnitude: " + magnitude);
+        int decreasingAmount = decreaseBy(magnitude);
         if (carDamage > 0)
         {
-            carDamage--;
+            carDamage-=decreasingAmount;
+        }
+        if (carDamage < 0)
+        {
+            carDamage = 0;
         }
         if (carDamage == 0)
         {
             //speed is zero
             carController.maxspeed = 0f;
-
         }
         else if (carDamage == 5)
         {

@@ -302,6 +302,7 @@
     <Compile Include="Assets\OUr Scripts\ObserveableManager.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerController.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerEventCollision.cs" />
+    <Compile Include="Assets\OUr Scripts\PublicObjects.cs" />
     <Compile Include="Assets\OUr Scripts\Radio.cs" />
     <Compile Include="Assets\OUr Scripts\RandomAudioClip.cs" />
     <Compile Include="Assets\OUr Scripts\RoadCollisionDetector.cs" />
@@ -417,7 +418,6 @@
     <Compile Include="Assets\RealisticCarControllerV3\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <Compile Include="Assets\SimpleSkeletonFree\Script\Character\PlayerController.cs" />
     <Compile Include="Assets\StalkerGhost\SoldierFree\AttachWeapon.cs" />
     <Compile Include="Assets\Stellar Sky\Demo\CameraController.cs" />
   </ItemGroup>

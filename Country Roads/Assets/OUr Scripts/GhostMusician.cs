@@ -11,7 +11,7 @@ public class GhostMusician : MonoBehaviour {
     public AudioClip musicClip;
     public SanityMeter sm;
     public bool coroutine_running;
-    public bool pose_switched;
+    public bool pose_switched=false;
     public GameObject pose2;
     public GameObject carPosition;
     public Radio radio;
@@ -20,18 +20,19 @@ public class GhostMusician : MonoBehaviour {
     void Start () {
         sm = GameObject.FindWithTag("SanityHandler").GetComponentInChildren<SanityMeter>();
         coroutine_running = false;
-        pose_switched = false;
         textClip = GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
-        //radio = GameObject.FindGameObjectWithTag("Radio").GetComponent<Radio>();
-	}
+        pose2 = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().musicianPose2;
+        carPosition = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().carPosition;
+        radio = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().radio.GetComponent<Radio>();
+    }
 
     void Awake()
     {
         sm = GameObject.FindWithTag("SanityHandler").GetComponentInChildren<SanityMeter>();
         coroutine_running = false;
-        pose_switched = false;
         textClip = GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
-        //radio = GameObject.FindGameObjectWithTag("Radio").GetComponent<Radio>();
+        radio = GameObject.FindGameObjectWithTag("Radio").GetComponent<Radio>();
+        pose2 = GameObject.FindWithTag("Pose2");
     }
 
     // Update is called once per frame
@@ -55,6 +56,7 @@ public class GhostMusician : MonoBehaviour {
         {
             musicianSource.clip = musicClip;
             musicianSource.loop = true;
+            radio.radioOn = false;
             musicianSource.Play();
         }
 	}
@@ -82,5 +84,7 @@ public class GhostMusician : MonoBehaviour {
         }
         sm.lowerSanity = false;
         coroutine_running = false;
+        radio.radioOn = true;
+        this.gameObject.transform.parent.gameObject.SetActive(false);
     }
 }

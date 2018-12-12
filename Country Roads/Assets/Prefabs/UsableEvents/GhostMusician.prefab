@@ -337,7 +337,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4242809558494024}
   - component: {fileID: 95668952129082874}
-  - component: {fileID: 114071716684397930}
   - component: {fileID: 114758789150048998}
   - component: {fileID: 135283074734755570}
   m_Layer: 0
@@ -642,7 +641,6 @@ GameObject:
   - component: {fileID: 4732233176883376}
   - component: {fileID: 33009111594997186}
   - component: {fileID: 23520053788075782}
-  - component: {fileID: 64257186904366858}
   m_Layer: 0
   m_Name: BassGuitar_cl
   m_TagString: Untagged
@@ -831,8 +829,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375703133332554}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 203.62, y: 0.5, z: 292.67}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 203.62, y: 0.5, z: 299.5}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4253067438609070}
@@ -840,7 +838,7 @@ Transform:
   - {fileID: 4732233176883376}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4253067438609070
 Transform:
   m_ObjectHideFlags: 1
@@ -1401,7 +1399,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037840345232014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1443,20 +1441,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037840345232014}
   m_Mesh: {fileID: 4300002, guid: a58154c350c4ccf47a6cdad03a8dca1a, type: 3}
---- !u!64 &64257186904366858
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1810750950539480}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 9c8355bd15762fc4dbaadfa290872931, type: 3}
 --- !u!82 &82779592759952294
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1554,18 +1538,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114071716684397930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1375703133332554}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f77b8e612814cce488f6a6c228346be2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseRotateSpeed: 0.3
 --- !u!114 &114595454804090524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1577,7 +1549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1c15e7eccd4a44393e505b6d8c6b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundSource: {fileID: 0}
+  soundSource: {fileID: 82779592759952294}
   soundClips:
   - {fileID: 8300000, guid: dad2da8ddee5f3a478207860958875a6, type: 3}
   - {fileID: 8300000, guid: fc84dd9397cc9a945b3720cb7911a5fb, type: 3}
@@ -1614,7 +1586,7 @@ MonoBehaviour:
   inRange: 10
   musicianSource: {fileID: 82779592759952294}
   textClip: {fileID: 0}
-  musicClip: {fileID: 8300000, guid: fa962eabfa676d04f9967b08df5ebc21, type: 3}
+  musicClip: {fileID: 8300000, guid: cc6e07e48477c434b86eaec24854f6d7, type: 3}
   sm: {fileID: 0}
   coroutine_running: 0
   pose_switched: 0

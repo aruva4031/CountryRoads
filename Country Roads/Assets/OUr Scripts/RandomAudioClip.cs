@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomAudioClip : MonoBehaviour {
+
+    System.Random rand = new System.Random();
     public AudioSource soundSource;
     public AudioClip[] soundClips;
 	// Use this for initialization
@@ -15,7 +17,7 @@ public class RandomAudioClip : MonoBehaviour {
 
     public AudioClip getRandomClip(AudioClip[] clips)
     {
-        int clipNumber = Random.Range(0, clips.Length-1);
+        int clipNumber = rand.Next(0, soundClips.Length);
         return clips[clipNumber];
     }
 	

@@ -22,12 +22,6 @@ public class StalkerGhostAI : MonoBehaviour {
     void Start () {
         anim = GameObject.FindWithTag("Camera").GetComponent<Animation>();
         //set transparent color
-        Renderer[] meshes = GetComponentsInChildren<Renderer>();
-        foreach(Renderer model in meshes)
-        {
-            model.material.color
-           = new Color(gameObject.GetComponentInChildren<Renderer>().material.color.r, gameObject.GetComponentInChildren<Renderer>().material.color.g, gameObject.GetComponentInChildren<Renderer>().material.color.b, 0.5f);
-        }
         //gameObject.GetComponentInChildren<Renderer>().material.color
         //   = new Color(gameObject.GetComponentInChildren<Renderer>().material.color.r, gameObject.GetComponentInChildren<Renderer>().material.color.g, gameObject.GetComponentInChildren<Renderer>().material.color.b, 0.5f);
         target = GameObject.Find("GhostPosition");

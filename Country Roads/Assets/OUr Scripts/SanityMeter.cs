@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SanityMeter : MonoBehaviour
 {
-
     public float sanity = 100;
     public bool lowerSanity;
     public bool coroutine_running;
@@ -13,6 +12,9 @@ public class SanityMeter : MonoBehaviour
     public GameObject fireEffects;
     public GameObject brightLight;
     public bool sanityIncreasing;
+
+    private int selection = 1;
+    private int lastSelection = 1;
 
     // Use this for initialization
     void Start()
@@ -45,14 +47,26 @@ public class SanityMeter : MonoBehaviour
         GetComponent<UnityEngine.UI.Text>().text = "Sanity: " + (int)sanity;
         //************************CHANGED END!!!!!!!!!!!*************************************************************************
         if (sanity <= 45 && !coroutine_running)
-        {/*
-			sanityEvent (2);
-			coroutine_running = true;
-            */
-            //Bright light test
-            sanityEvent(5);
-            coroutine_running = true;
+        {
+            selection = (int)(Random.Range(1, 4));
 
+            if (selection != lastSelection)
+            {
+                sanityEvent(selection);
+                coroutine_running = true;
+            }
+            else
+            {
+                while (selection == lastSelection)
+                {
+                    selection = (int)(Random.Range(1, 4));
+                }
+
+                sanityEvent(selection);
+                coroutine_running = true;
+            }
+
+            lastSelection = selection;
         }
     }
 
@@ -130,7 +144,7 @@ public class SanityMeter : MonoBehaviour
         {
             StartCoroutine(TalkativeRadio());
         }
-        else if (selector == 5)
+        else if (selector == 3)
         {
             StartCoroutine(BrightLight());
         }
@@ -138,6 +152,7 @@ public class SanityMeter : MonoBehaviour
     //selector must be 1
     public IEnumerator BloodyWindows()
     {
+        Debug.Log("BloodyWindows running");
         bloodEffects.SetActive(true);
         yield return new WaitForSeconds(10);
         bloodEffects.SetActive(false);
@@ -147,30 +162,18 @@ public class SanityMeter : MonoBehaviour
     //selector must be 2
     public IEnumerator TalkativeRadio()
     {
+        Debug.Log("TalkativeRadio running");
         gameRadio.GetComponent<Radio>().SanityRadio();
         GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
         yield return new WaitForSeconds(gameRadio.GetComponent<Radio>().insaneRadio.clip.length);
         sanity += 10;
         coroutine_running = false;
     }
+
     //selector must be 3
-    public IEnumerator KnocksAndSounds()
-    {
-        yield return new WaitForSeconds(10);
-        sanity += 10;
-        coroutine_running = false;
-    }
-    //selector must be 4
-    public IEnumerator RoadsOnFire()
-    {
-        fireEffects.SetActive(true);
-        yield return new WaitForSeconds(10);
-        sanity += 10;
-        coroutine_running = false;
-    }
-    //selector must be 5
     public IEnumerator BrightLight()
     {
+        Debug.Log("BrightLight running");
         brightLight.GetComponent<BrightLight>().sanityIsLow = true;
         brightLight.GetComponent<BrightLight>().isPlaying = true;
         yield return new WaitForSeconds(brightLight.GetComponent<BrightLight>().ringingNoise.clip.length);
@@ -181,3 +184,4 @@ public class SanityMeter : MonoBehaviour
         coroutine_running = false;
     }
 }
+

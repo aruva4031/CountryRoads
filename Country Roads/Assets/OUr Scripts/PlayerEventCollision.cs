@@ -32,11 +32,11 @@ public class PlayerEventCollision : MonoBehaviour {
         {
             Debug.Log(collision.transform.tag);
             collision.gameObject.GetComponentInParent<Animator>().SetBool("deerFalls", true);
-            GetComponentInParent<PlayerController>().decreaseCarDamage();
+            GetComponentInParent<PlayerController>().decreaseCarDamage(collision.relativeVelocity.magnitude);
         }
         if (collision.transform.tag == "Tree")
         {
-            GetComponentInParent<PlayerController>().decreaseCarDamage();
+            GetComponentInParent<PlayerController>().decreaseCarDamage(collision.relativeVelocity.magnitude);
         }
     }
 
