@@ -63,6 +63,7 @@ public class StalkerGhostAI : MonoBehaviour {
         //{
         //    transform.rotation = GameObject.FindWithTag("Camera").GetComponent<Animation>().transform.rotation;
         //}
+
     }
 
     //public void killPlayer()

@@ -395,24 +395,24 @@ MonoBehaviour:
     height: 598
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f43d0000
-    m_LastClickedID: 15860
-    m_ExpandedIDs: 9efbffff00000000
+    scrollPos: {x: 0, y: 379}
+    m_SelectedIDs: ea400000
+    m_LastClickedID: 16618
+    m_ExpandedIDs: 42f0fffffcf4ffff9efbffff00000000f43d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: GhostMusician
+      m_OriginalName: GhostMusician
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -2820
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -478,14 +478,14 @@ MonoBehaviour:
     height: 314
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 7428.7100792988995
+  lastFramingTime: 664.0967192973241
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 202.026, y: 40.835957, z: 306.86984}
+    m_Target: {x: 198.8545, y: 0.7489575, z: 309.39435}
     speed: 2
-    m_Value: {x: 202.026, y: 40.835957, z: 306.86984}
+    m_Value: {x: 198.8545, y: 0.7489575, z: 309.39435}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -509,13 +509,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.66500163, y: -0.033569526, z: 0.029945312, w: 0.74548584}
+    m_Target: {x: -0.7392777, y: -0.11719604, z: 0.13338074, w: -0.6495715}
     speed: 2
-    m_Value: {x: -0.66500163, y: 0.033569526, z: -0.029945312, w: -0.74548584}
+    m_Value: {x: -0.7392777, y: -0.11719604, z: 0.13338074, w: -0.6495715}
   m_Size:
-    m_Target: 27.47126
+    m_Target: 0.7991788
     speed: 2
-    m_Value: 27.47126
+    m_Value: 0.7991788
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -853,7 +853,7 @@ MonoBehaviour:
     width: 321
     height: 598
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 713.9551}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 100

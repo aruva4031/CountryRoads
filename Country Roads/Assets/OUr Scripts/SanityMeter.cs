@@ -68,6 +68,11 @@ public class SanityMeter : MonoBehaviour
 
             lastSelection = selection;
         }
+        if (sanity <= 0)
+        {
+            GameObject.Find("Player").GetComponent<PlayerController>().carDamage = 0;
+            GameObject.Find("Player").GetComponent<PlayerController>().decreaseCarDamage(0);
+        }
     }
 
     public void FixedUpdate()
