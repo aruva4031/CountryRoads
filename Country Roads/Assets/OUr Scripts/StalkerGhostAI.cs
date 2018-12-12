@@ -42,7 +42,7 @@ public class StalkerGhostAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //create realtime step
-        Debug.Log(Vector3.Distance(transform.position, target.transform.position));
+        //Debug.Log(Vector3.Distance(transform.position, target.transform.position));
 
         float step = speed * Time.deltaTime;
         if (Vector3.Distance(transform.position, target.transform.position) > maxDistance)

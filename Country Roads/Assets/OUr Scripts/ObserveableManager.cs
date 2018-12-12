@@ -11,6 +11,7 @@ public class ObserveableManager : MonoBehaviour {
     public bool triggerDone;
     public GenerateEvents eventGenerator;
     public int index=-1;
+    public bool musicianHeard=false;
 
     // Use this for initialization
     void Start () {
@@ -45,7 +46,7 @@ public class ObserveableManager : MonoBehaviour {
         if (other.gameObject.tag == "Player" && this.gameObject.tag != "tree")
         {
             changeChildActivity(true);
-            if (isGhost)
+            if (isGhost&&!musicianHeard)
             {
                 StartCoroutine(ghostDestruction());
             }
@@ -63,10 +64,10 @@ public class ObserveableManager : MonoBehaviour {
         {
             triggerDone = true;
             changeChildActivity(false);
-            //if (!isHitchhiker)
-            //{
-            //    changeChildActivity(false);
-            //}
+            if (!musicianHeard)
+            {
+                changeChildActivity(false);
+            }
         }
         if(this.gameObject.tag == "tree"&& other.gameObject.tag == "Player")
         {
@@ -83,6 +84,5 @@ public class ObserveableManager : MonoBehaviour {
             eventGenerator.generateSingleEvent(index);
         }
         Destroy(this.gameObject);
-
     }
 }

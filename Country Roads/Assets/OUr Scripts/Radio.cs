@@ -20,7 +20,7 @@ public class Radio : MonoBehaviour
 	// Use this for initializsation
 	void Start()
 	{
-		this.radioOn = false;
+		//this.radioOn = false;
 		//start playing radio
 		radioSound.Play();
 		radioSound.volume = 0f;

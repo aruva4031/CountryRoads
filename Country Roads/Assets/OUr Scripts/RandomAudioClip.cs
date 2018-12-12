@@ -15,7 +15,7 @@ public class RandomAudioClip : MonoBehaviour {
 
     public AudioClip getRandomClip(AudioClip[] clips)
     {
-        int clipNumber = Random.Range(0, clips.Length);
+        int clipNumber = Random.Range(0, clips.Length-1);
         return clips[clipNumber];
     }
 	

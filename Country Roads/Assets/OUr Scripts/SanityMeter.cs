@@ -5,7 +5,7 @@ using UnityEngine;
 public class SanityMeter : MonoBehaviour
 {
 
-    public float sanity = 10;
+    public float sanity = 100;
     public bool lowerSanity;
     public bool coroutine_running;
     public GameObject bloodEffects;

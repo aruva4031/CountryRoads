@@ -19,17 +19,31 @@ public class GenerateEvents : MonoBehaviour
     void Start()
     {
         eventsGenerated = false;
-        if (normalProbability == 0)
-        {
-            normalProbability = 10;
-        }
-        if (supernaturalProbability == 0)
-        {
-            supernaturalProbability = 15;
-        }
+        setProbabilities();
         nothingProbability = 100 - normalProbability - supernaturalProbability;
         //deactivateAllTrees();
         //startingRoad= GameObject.FindWithTag("RoadSpawner").GetComponent<GenerateRoads>().copy_road;
+    }
+
+    void setProbabilities()
+    {
+        int difficulty = DifficultyChosen.getDifficultyLevel();
+        Debug.Log("Difficulty Level: " + DifficultyChosen.getDifficultyLevel());
+        switch (difficulty)
+        {
+            case 0:
+                normalProbability = 10;
+                supernaturalProbability = 15;
+                break;
+            case 1:
+                normalProbability = 20;
+                supernaturalProbability = 25;
+                break;
+            case 2:
+                normalProbability = 25;
+                supernaturalProbability = 50;
+                break;
+        }
     }
 
     // Update is called once per frame
