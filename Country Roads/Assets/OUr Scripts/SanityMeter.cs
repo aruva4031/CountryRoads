@@ -16,6 +16,34 @@ public class SanityMeter : MonoBehaviour
     private int selection = 1;
     private int lastSelection = 1;
 
+    // getters for values; for Bianca's fake road event
+    public float getSanity()
+    {
+        return sanity;
+    }
+
+    public int getSelector()
+    {
+        return selection;
+    }
+
+    public bool getCoroutineRunning()
+    {
+        return coroutine_running;
+    }
+
+    public void switchCoroutine()
+    {
+        if (coroutine_running)
+        {
+            coroutine_running = false;
+        }
+        else
+        {
+            coroutine_running = true;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -48,7 +76,7 @@ public class SanityMeter : MonoBehaviour
         //************************CHANGED END!!!!!!!!!!!*************************************************************************
         if (sanity <= 45 && !coroutine_running)
         {
-            selection = (int)(Random.Range(1, 4));
+            selection = (int)(Random.Range(1, 5));
 
             if (selection != lastSelection)
             {
@@ -59,7 +87,7 @@ public class SanityMeter : MonoBehaviour
             {
                 while (selection == lastSelection)
                 {
-                    selection = (int)(Random.Range(1, 4));
+                    selection = (int)(Random.Range(1, 5));
                 }
 
                 sanityEvent(selection);
