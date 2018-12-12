@@ -88,7 +88,7 @@ public class CameraController : MonoBehaviour
         this.timeInSec = timeInSec + Time.deltaTime;
 
         horizontalRS = Input.GetAxis("HorizontalRS") * 80;
-        verticalRS = Input.GetAxis("VerticalRS") * 20;
+        verticalRS = Input.GetAxis("VerticalRS") * 30;
 
         look = Quaternion.Euler(transform.localRotation.x + verticalRS, transform.localRotation.y + horizontalRS, transform.localRotation.z + 0);
         if (GameObject.FindWithTag("StalkerGhost").GetComponent<StalkerGhostAI>().stopMovement == false)
