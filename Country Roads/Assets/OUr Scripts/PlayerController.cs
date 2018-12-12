@@ -12,8 +12,14 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         carDamage = 10;
         carController = GetComponent<RCC_CarControllerV3>();
-
+        StartCoroutine(TriggerDelay());
 	}
+
+    IEnumerator TriggerDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        GetComponent<SphereCollider>().enabled = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
