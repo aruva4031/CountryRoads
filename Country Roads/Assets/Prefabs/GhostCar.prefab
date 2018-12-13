@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 65370379561758370}
   - component: {fileID: 82286006382653352}
   - component: {fileID: 114120553708375410}
+  - component: {fileID: 114972550471658286}
   m_Layer: 0
   m_Name: GhostCar
   m_TagString: GhostCar
@@ -183,7 +184,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1236280322845978}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 199.30728, y: 1.47, z: 374.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -194,7 +195,7 @@ Transform:
   - {fileID: 4708252996227002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4491370421628262
 Transform:
   m_ObjectHideFlags: 1
@@ -523,7 +524,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.11, y: 2.6, z: 6.58}
+  m_Size: {x: 1.38, y: 2.6, z: 4.18}
   m_Center: {x: 0, y: -0.32, z: -0.6}
 --- !u!82 &82286006382653352
 AudioSource:
@@ -534,11 +535,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 140e19e67be2d2141a357b87d13d2f73, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -688,7 +689,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1419ef83b403a647b2309a19b32ace3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarShutdownTime: 3
-  Duration: 3
-  speed: 2
-  SanityLowerOnceAmount: 5
+  CarShutdownTime: 6
+  Duration: 10
+  speed: 5
+  SanityLowerOnceAmount: 15
+--- !u!114 &114972550471658286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236280322845978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712ab897cb395124081636ee1b21f907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGhost: 1
+  isHitchhiker: 0
+  hikerDone: 0
+  triggerDone: 0
+  eventGenerator: {fileID: 0}
+  index: -1
+  musicianHeard: 0

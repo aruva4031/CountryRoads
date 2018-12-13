@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GenerateEvents : MonoBehaviour
 {
-
+    //functionality: musician(both ways), hitchhiker (both ways), fallen tree, fog, deer kinda sufficient, ghost child, ghost car
+    //
     System.Random rand = new System.Random();
     public GameObject[] roads;
     public bool[] hasEvent;
@@ -23,7 +24,9 @@ public class GenerateEvents : MonoBehaviour
     {
         treeCounter = 0;
         eventsGenerated = false;
-        setProbabilities();
+        //setProbabilities();
+        normalProbability = 50;
+        supernaturalProbability = 50;
         nothingProbability = 100 - normalProbability - supernaturalProbability;
         //deactivateAllTrees();
         //startingRoad= GameObject.FindWithTag("RoadSpawner").GetComponent<GenerateRoads>().copy_road;
@@ -79,6 +82,11 @@ public class GenerateEvents : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         //deactivateAllTrees();
         roads = GetComponent<GenerateRoads>().generatedRoads;
+        hasEvent = new bool[roads.Length];
+        for (int i = 0; i < hasEvent.Length; i++)
+        {
+            hasEvent[i] = false;
+        }
         generateEvents();
     }
 
@@ -100,7 +108,20 @@ public class GenerateEvents : MonoBehaviour
         {
             if ((i > 0 && enoughRoadDistance(i)) || (i == 0))
             {
-                generateSingleEvent(i);
+                int randomChance = rand.Next(0, 100);
+                Debug.Log("Random Chance: " + randomChance);
+                if (randomChance <= normalProbability)
+                {
+                    Debug.Log("Generating normal event");
+                    generateNormalEvent(i);
+                    hasEvent[i] = true;
+                }
+                else if(randomChance <= (normalProbability+supernaturalProbability))
+                {
+                    Debug.Log("Generating supernatural event");
+                    generateSupernaturalEvent(i);
+                    hasEvent[i] = true;
+                }
             }
         }
         eventsGenerated = true;
@@ -139,7 +160,16 @@ public class GenerateEvents : MonoBehaviour
             treeCounter++;
             instanceTreeCounter++;
         }
-        instance=Instantiate(normalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, normalEvents[randomEvent].transform.rotation);
+        Debug.Log("RandomEvent index: " + randomEvent);
+        if (randomEvent == 0)
+        {
+            instance = Instantiate(normalEvents[randomEvent], roads[index].transform.GetChild(0).transform.position, normalEvents[randomEvent].transform.rotation);
+        }
+        else
+        {
+            instance = Instantiate(normalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, normalEvents[randomEvent].transform.rotation);
+        }
+        //instance=Instantiate(normalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, normalEvents[randomEvent].transform.rotation);
         instanceSetup(instance, index);
     }
 
@@ -156,12 +186,16 @@ public class GenerateEvents : MonoBehaviour
         {
             randomEvent = rand.Next(0, supernaturalEvents.Length - 1);
         }
-        Debug.Log("RE: " + randomEvent);
+        //Debug.Log("RE: " + randomEvent);
+        //if (randomEvent == 0)
+        //{
+        //    instance = Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+        //}
         if (randomEvent == supernaturalEvents.Length - 1)
         {
             if (roads[index].gameObject.tag == "straightRoad")
             {
-                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y+180, roads[index].transform.GetChild(0).transform.rotation.z));
+                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y-90, roads[index].transform.GetChild(0).transform.rotation.z));
                 instanceSetup(instance, index);
             }
             else if(roads[index].gameObject.tag == "curvedroad")

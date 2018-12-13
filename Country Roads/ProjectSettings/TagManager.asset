@@ -30,6 +30,7 @@ TagManager:
   - CrossPiece
   - player
   - GenerationCollider
+  - FallenTree
   layers:
   - Default
   - TransparentFX

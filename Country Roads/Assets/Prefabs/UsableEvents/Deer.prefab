@@ -537,15 +537,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907908355397186}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 199.63, y: 2.01, z: 310.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -710.2633, y: 0.00000023841858, z: -551.485}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4877827701589152}
   - {fileID: 4027718040942276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4225052861347620
 Transform:
   m_ObjectHideFlags: 1
@@ -881,8 +881,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.91, y: 11.050001, z: 13.565771}
-  m_Center: {x: -0.83, y: 5.68, z: -0.67}
+  m_Size: {x: 5.75, y: 11.050001, z: 13.565771}
+  m_Center: {x: -0.11, y: 5.68, z: -0.67}
 --- !u!95 &95427423644332046
 Animator:
   serializedVersion: 3
@@ -912,6 +912,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGhost: 0
+  isHitchhiker: 0
+  hikerDone: 0
+  triggerDone: 0
+  eventGenerator: {fileID: 0}
+  index: -1
+  musicianHeard: 1
 --- !u!137 &137589305427693830
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

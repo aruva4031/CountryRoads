@@ -22,9 +22,9 @@ public class ObserveableManager : MonoBehaviour {
         hikerDone = false;
         pos = GameObject.Find("PositionInCar");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (isHitchhiker && hikerDone && triggerDone)
         {
             changeChildActivity(false);

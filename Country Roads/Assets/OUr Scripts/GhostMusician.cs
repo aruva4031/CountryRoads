@@ -18,7 +18,7 @@ public class GhostMusician : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        sm = GameObject.FindWithTag("SanityHandler").GetComponentInChildren<SanityMeter>();
+        sm = GameObject.FindWithTag("SanityHandler").GetComponent<SanityMeter>();
         coroutine_running = false;
         textClip = GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
         pose2 = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().musicianPose2;
@@ -28,7 +28,7 @@ public class GhostMusician : MonoBehaviour {
 
     void Awake()
     {
-        sm = GameObject.FindWithTag("SanityHandler").GetComponentInChildren<SanityMeter>();
+        sm = GameObject.FindWithTag("SanityHandler").GetComponent<SanityMeter>();
         coroutine_running = false;
         textClip = GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
         radio = GameObject.FindGameObjectWithTag("Radio").GetComponent<Radio>();

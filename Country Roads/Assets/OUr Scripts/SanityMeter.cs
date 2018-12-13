@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SanityMeter : MonoBehaviour
 {
-    public float sanity = 45;
+    public float sanity;
     public bool lowerSanity;
     public bool coroutine_running;
     public GameObject bloodEffects;
@@ -47,6 +47,7 @@ public class SanityMeter : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        sanity = 100;
         lowerSanity = false;
         coroutine_running = false;
         InvokeRepeating("sanityLowering", 0.0f, 1.0f);
@@ -63,7 +64,7 @@ public class SanityMeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sanity = 45;
+        //sanity = 45;
         if (sanity > 100)
         {
             sanity = 100;
