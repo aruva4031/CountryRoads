@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.UI;
+//using UnityE.UI;
 
 public class cr_controller : MonoBehaviour
 {

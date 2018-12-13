@@ -189,7 +189,7 @@ public class GenerateEvents : MonoBehaviour
         //Debug.Log("RE: " + randomEvent);
         if (randomEvent == 0)
         {
-            instance = Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, supernaturalEvents[randomEvent].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+            instance = Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, supernaturalEvents[randomEvent].transform.GetChild(0).transform.rotation.y* roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
         }
         else if (randomEvent == supernaturalEvents.Length - 1)
         {
@@ -206,8 +206,78 @@ public class GenerateEvents : MonoBehaviour
         }
         else
         {
-            instance=Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation);
-            instanceSetup(instance, index);
+            if (roads[index].gameObject.tag == "curvedroadleft")
+            {
+                //works for hitchhiker
+                if (randomEvent == 1)
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 245f, 0f));
+                    instanceSetup(instance, index);
+                }
+                //for ghost musican
+                else if (randomEvent == 2)
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 275f, 0f));
+                    instanceSetup(instance, index);
+
+                }
+                else
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 275f, 0f));
+                    instanceSetup(instance, index);
+
+
+                }
+
+            }
+            else if (roads[index].gameObject.tag == "curvedroadright")
+            {
+                //works for hitchhiker
+                if (randomEvent == 1)
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 45f, 0f));
+                    instanceSetup(instance, index);
+                }
+                //for ghost musican
+                else if (randomEvent == 2)
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 275f, 0f));
+                    instanceSetup(instance, index);
+
+                }
+                else
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 275f, 0f));
+                    instanceSetup(instance, index);
+
+
+                }
+
+            }
+            else
+            {
+                //works for hitchhiker
+                if (randomEvent == 1)
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 45f, 0f));
+                    instanceSetup(instance, index);
+                }
+                //forn ghost musican
+                else if(randomEvent == 2 )
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 275f, 0f));
+                    instanceSetup(instance, index);
+
+                }
+                else
+                {
+                    instance = Instantiate(supernaturalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, supernaturalEvents[randomEvent].transform.rotation * Quaternion.Euler(0f, 275f, 0f));
+                    instanceSetup(instance, index);
+
+
+                }
+
+            }
         }
     }
     void instanceSetup(GameObject instance,int index)
