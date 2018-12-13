@@ -1,6 +1,6 @@
-﻿<Properties StartupItem="Country Roads.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OUr Scripts\DifficultyChosen.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OUr Scripts\CrazyTreeScript.cs">
     <Files>
       <File FileName="Assets\OUr Scripts\GhostCar.cs" Line="1" Column="1" />
       <File FileName="Assets\OUr Scripts\CameraController.cs" Line="1" Column="1" />
@@ -9,9 +9,11 @@
       <File FileName="Assets\OUr Scripts\Radio.cs" Line="1" Column="1" />
       <File FileName="Assets\OUr Scripts\SanityMeter.cs" Line="1" Column="1" />
       <File FileName="Assets\OUr Scripts\GenerateRoads.cs" Line="1" Column="1" />
-      <File FileName="Assets\OUr Scripts\GhostMusician.cs" Line="27" Column="28" />
+      <File FileName="Assets\OUr Scripts\GhostMusician.cs" Line="1" Column="1" />
       <File FileName="Assets\OUr Scripts\RoadCollisionDetector.cs" Line="1" Column="1" />
       <File FileName="Assets\OUr Scripts\DifficultyChosen.cs" Line="1" Column="1" />
+      <File FileName="Assets\OUr Scripts\CrazyTreeScript.cs" Line="10" Column="32" />
+      <File FileName="Assets\OUr Scripts\SanityActivatorScript.cs" Line="9" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
