@@ -187,11 +187,11 @@ public class GenerateEvents : MonoBehaviour
             randomEvent = rand.Next(0, supernaturalEvents.Length - 1);
         }
         //Debug.Log("RE: " + randomEvent);
-        //if (randomEvent == 0)
-        //{
-        //    instance = Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
-        //}
-        if (randomEvent == supernaturalEvents.Length - 1)
+        if (randomEvent == 0)
+        {
+            instance = Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+        }
+        else if (randomEvent == supernaturalEvents.Length - 1)
         {
             if (roads[index].gameObject.tag == "straightRoad")
             {
