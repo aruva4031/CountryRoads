@@ -189,18 +189,18 @@ public class GenerateEvents : MonoBehaviour
         //Debug.Log("RE: " + randomEvent);
         if (randomEvent == 0)
         {
-            instance = Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+            instance = Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, supernaturalEvents[randomEvent].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
         }
         else if (randomEvent == supernaturalEvents.Length - 1)
         {
             if (roads[index].gameObject.tag == "straightRoad")
             {
-                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y-90, roads[index].transform.GetChild(0).transform.rotation.z));
+                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, supernaturalEvents[randomEvent].transform.GetChild(0).transform.rotation.y-90, roads[index].transform.GetChild(0).transform.rotation.z));
                 instanceSetup(instance, index);
             }
             else if(roads[index].gameObject.tag == "curvedroad")
             {
-                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y + 225, roads[index].transform.GetChild(0).transform.rotation.z));
+                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, supernaturalEvents[randomEvent].transform.GetChild(0).transform.rotation.y + 225, roads[index].transform.GetChild(0).transform.rotation.z));
                 instanceSetup(instance, index);
             }
         }
