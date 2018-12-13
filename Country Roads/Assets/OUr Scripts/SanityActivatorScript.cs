@@ -7,6 +7,9 @@ public class SanityActivatorScript : MonoBehaviour {
 	private Renderer[] hollowRoad;
 	private bool playerNear = false;
 
+    // for crazy tree script
+    public SanityMeter sanity;
+
 	// Use this for initialization
 	void Start () {
 		hollowRoad = this.gameObject.GetComponentsInChildren<Renderer>();
@@ -16,7 +19,7 @@ public class SanityActivatorScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (sanity.getSanity () <= 45 && sanity.getSelector == 6) {
+		if (sanity.getSanity () <= 45 && sanity.getSelector() == 4) {
 			setOn ();
 		}
 

@@ -7,6 +7,8 @@ public class CrazyTreeScript : MonoBehaviour {
 	private Renderer[] crazyTrees;
 	private bool playerNear = false;
 
+    public SanityMeter sanity;
+
 	// Use this for initialization
 	void Start () {
 		crazyTrees = this.gameObject.GetComponentsInChildren<Renderer>();
