@@ -142,9 +142,10 @@ public class GhostHitchhiker : MonoBehaviour {
 
     public bool lookForPlayer()
     {
+        Vector3 pos = new Vector3(transform.position.x, car.transform.position.y+1, transform.position.z);
         RaycastHit hit=new RaycastHit();
-        if (Physics.Raycast(new Ray(transform.position,transform.forward), out hit, 100f)){
-            Debug.DrawRay(transform.position,transform.forward*100f);
+        if (Physics.Raycast(new Ray(pos,transform.forward), out hit, 100f)){
+            Debug.DrawRay(pos,transform.forward*100f);
             if (hit.collider.gameObject.tag == "Player")
             {
                 Debug.Log("I SEE YOU");

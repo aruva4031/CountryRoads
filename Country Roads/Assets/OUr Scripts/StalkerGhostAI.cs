@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StalkerGhostAI : MonoBehaviour {
-    public float speed;             //walking speed of the ghost, can be adjusted
+    public float speed=2f;             //walking speed of the ghost, can be adjusted
     public float originalSpeed;
     public GameObject target;      //to store where the ghost is moving to: the player
     public AudioSource deathSource;
@@ -16,6 +16,7 @@ public class StalkerGhostAI : MonoBehaviour {
     public bool isKilled;
     private bool coroutine_running;
     public bool stopMovement;
+    public GameObject playerController;
 
 
     // Use this for initialization
@@ -31,30 +32,45 @@ public class StalkerGhostAI : MonoBehaviour {
         coroutine_running = false;
         originalSpeed = speed;
         stopMovement = false;
+        playerController = GameObject.Find("Player");
     }
 	
 	// Update is called once per frame
 	void Update () {
         //create realtime step
         //Debug.Log(Vector3.Distance(transform.position, target.transform.position));
-
         float step = speed * Time.deltaTime;
-        if (Vector3.Distance(transform.position, target.transform.position) > maxDistance)
+        //Debug.Log("Step: " + Time.deltaTime);
+        this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z), step);
+        if (Vector3.Distance(transform.position, target.transform.position) > maxDistance || (playerController.GetComponent<PlayerController>().carDamage == 0))
         {
             speed = originalSpeed*1.5f;
         }
-        else if (Vector3.Distance(transform.position, target.transform.position) < closeDistance)
+        else if ((Vector3.Distance(transform.position, target.transform.position) < closeDistance) && (playerController.GetComponent<PlayerController>().carDamage != 0))
         {
-            speed = originalSpeed*2/3;
+            speed = originalSpeed*(2/3);
         }
-        if (!coroutine_running&&Vector3.Distance(transform.position, target.transform.position) <= 0.2f)
+        //else if ((Vector3.Distance(transform.position, target.transform.position) < closeDistance))
+        //{
+        //    speed = originalSpeed * 1.5f;
+        //}
+        if (!coroutine_running&&Vector3.Distance(transform.position, target.transform.position)<=0.2f)
         {
+            Debug.Log("Fail");
             StartCoroutine(playerLoses());
             speed = 0;
         }
-        //use moveTowards() function to follow/ move towards player
-        this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y,target.transform.position.z), step);
-        if (isKilled==true & !deathSource.isPlaying)
+        if (!(Vector3.Distance(transform.position, target.transform.position) <= 0.2f)&&speed==0 && (playerController.GetComponent<PlayerController>().carDamage != 0))
+        {
+            speed = originalSpeed;
+        }
+        else if (!(Vector3.Distance(transform.position, target.transform.position) <= 0.2f) && speed == 0 && (playerController.GetComponent<PlayerController>().carDamage != 0))
+        {
+            speed = originalSpeed*1.5f;
+        }
+            //use moveTowards() function to follow/ move towards player
+            //this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y,target.transform.position.z), step);
+            if (isKilled==true & !deathSource.isPlaying)
         {
             deathSource.clip = deathScream;
             deathSource.Play();

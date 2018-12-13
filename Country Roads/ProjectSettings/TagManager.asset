@@ -24,6 +24,12 @@ TagManager:
   - RoadSpawner
   - tree
   - Pose2
+  - curvedroadright
+  - curvedroadleft
+  - FakeRoads
+  - CrossPiece
+  - player
+  - GenerationCollider
   layers:
   - Default
   - TransparentFX

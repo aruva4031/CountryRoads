@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerEventCollision : MonoBehaviour {
 
     //if the player collides with a trigger collider
     private void OnTriggerEnter(Collider collider)
     {
+        Debug.Log(this.GetComponent<Collider>().GetType());
         //if the player collides with the ghost child
         if (collider.gameObject.tag == "GhostChild")
         {
@@ -17,13 +19,17 @@ public class PlayerEventCollision : MonoBehaviour {
                 collider.gameObject.GetComponent<GhostChild>().startHaunting();
             }
         }
-        //if (collider.gameObject.tag == "StalkerGhost")
-        //{
-        //    Debug.Log(collider.transform.tag);
-        //    collider.gameObject.GetComponentInParent<StalkerGhostAI>().speed = 0;
-        //    collider.gameObject.GetComponentInParent<StalkerGhostAI>().killPlayer();
-        //}
-    }
+        if (collider.gameObject.tag == "home")
+        {
+            SceneManager.LoadScene("EndingScene");
+        }
+            //if (collider.gameObject.tag == "StalkerGhost")
+            //{
+            //    Debug.Log(collider.transform.tag);
+            //    collider.gameObject.GetComponentInParent<StalkerGhostAI>().speed = 0;
+            //    collider.gameObject.GetComponentInParent<StalkerGhostAI>().killPlayer();
+            //}
+        }
 
     private void OnCollisionEnter(Collision collision)
     {

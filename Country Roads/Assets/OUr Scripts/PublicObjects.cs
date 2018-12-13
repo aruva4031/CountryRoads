@@ -6,6 +6,7 @@ public class PublicObjects : MonoBehaviour {
     public GameObject hikerPose2;
     public GameObject musicianPose2;
     public GameObject carPosition;
+    public GameObject carPosition2;
     public GameObject radio;
 	// Use this for initialization
 	void Start () {

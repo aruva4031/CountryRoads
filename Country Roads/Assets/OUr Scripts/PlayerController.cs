@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator TriggerDelay()
     {
-        yield return new WaitForSeconds(3f);
-        GetComponent<SphereCollider>().enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        GameObject.FindWithTag("GenerationCollider").GetComponent<SphereCollider>().enabled = true;
     }
 	
 	// Update is called once per frame

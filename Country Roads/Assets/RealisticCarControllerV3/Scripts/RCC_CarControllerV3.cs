@@ -1115,7 +1115,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 
 		if(engineSoundOn){
 
-			engineSoundOn.volume = _gasInput;
+			engineSoundOn.volume = _gasInput *.5f;
 			engineSoundOn.pitch = Mathf.Lerp ( engineSoundOn.pitch, Mathf.Lerp (minEngineSoundPitch, maxEngineSoundPitch, engineRPM / 7000f), Time.deltaTime * 50f);
 					
 		}

@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 23040907195942146}
   - component: {fileID: 64730702687589858}
   - component: {fileID: 54999956131397348}
+  - component: {fileID: 114702258452719554}
   m_Layer: 0
   m_Name: streetleft
   m_TagString: curvedroadleft
@@ -21156,6 +21157,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sanity: {fileID: 0}
+--- !u!114 &114702258452719554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214956764935908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c08c013b156814b9d6432d907216ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadConnected: 0
+  generator: {fileID: 0}
 --- !u!114 &114718411630819354
 MonoBehaviour:
   m_ObjectHideFlags: 1

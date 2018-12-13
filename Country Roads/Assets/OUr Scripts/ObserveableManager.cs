@@ -12,6 +12,7 @@ public class ObserveableManager : MonoBehaviour {
     public GenerateEvents eventGenerator;
     public int index=-1;
     public bool musicianHeard;
+    GameObject pos;
 
     // Use this for initialization
     void Start () {
@@ -19,6 +20,7 @@ public class ObserveableManager : MonoBehaviour {
         changeChildActivity(false);
         triggerDone = false;
         hikerDone = false;
+        pos = GameObject.Find("PositionInCar");
     }
 	
 	// Update is called once per frame
@@ -26,8 +28,35 @@ public class ObserveableManager : MonoBehaviour {
         if (isHitchhiker && hikerDone && triggerDone)
         {
             changeChildActivity(false);
+            eventGenerator.generateSingleEvent(index);
+        }
+        if (lookForPlayer())
+        {
+            if (isGhost && !musicianHeard)
+            {
+                StartCoroutine(ghostDestruction());
+            }
         }
 	}
+
+    public bool lookForPlayer()
+    {
+       
+        RaycastHit hit = new RaycastHit();
+        if (Physics.Raycast(new Ray(new Vector3(transform.position.x,pos.transform.position.y,transform.position.z), transform.forward), out hit, 10f))
+        {
+            Debug.DrawRay(new Vector3(transform.position.x, pos.transform.position.y, transform.position.z), transform.forward * 100f);
+            if (hit.collider.gameObject.tag == "Player")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
+    }
 
     void changeChildActivity(bool isActive)
     {
@@ -43,18 +72,14 @@ public class ObserveableManager : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && this.gameObject.tag != "tree")
+        if (other.gameObject.tag == "GenerationCollider" && this.gameObject.tag != "tree")
         {
             changeChildActivity(true);
-            if (isGhost&&!musicianHeard)
-            {
-                StartCoroutine(ghostDestruction());
-            }
         }
-        if (this.gameObject.tag == "tree"&& other.gameObject.tag == "Player")
+        if (this.gameObject.tag == "tree"&& other.gameObject.tag == "GenerationCollider")
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            if (this.gameObject.transform.GetChild(0))
+            if (this.gameObject.transform.childCount>0)
             {
                 this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
             }
@@ -63,19 +88,19 @@ public class ObserveableManager : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player"&&this.gameObject.tag!="tree")
+        if (other.gameObject.tag == "GenerationCollider" && this.gameObject.tag!="tree")
         {
             triggerDone = true;
             changeChildActivity(false);
-            if (!musicianHeard)
+            if (!musicianHeard&&!isHitchhiker)
             {
                 changeChildActivity(false);
             }
         }
-        if(this.gameObject.tag == "tree"&& other.gameObject.tag == "Player")
+        if(this.gameObject.tag == "tree"&& other.gameObject.tag == "GenerationCollider")
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            if (this.gameObject.transform.GetChild(0))
+            if (this.gameObject.transform.childCount>0)
             {
                 this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
             }

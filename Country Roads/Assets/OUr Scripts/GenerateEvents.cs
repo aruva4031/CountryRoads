@@ -13,16 +13,21 @@ public class GenerateEvents : MonoBehaviour
     public int normalProbability, supernaturalProbability, nothingProbability;
     public GameObject[] normalEvents;
     public GameObject[] supernaturalEvents;
+
+    public static int treeCounter=0;
+    public int instanceTreeCounter;
     // public GameObject startingRoad;
 
     // Use this for initialization
     void Start()
     {
+        treeCounter = 0;
         eventsGenerated = false;
         setProbabilities();
         nothingProbability = 100 - normalProbability - supernaturalProbability;
         //deactivateAllTrees();
         //startingRoad= GameObject.FindWithTag("RoadSpawner").GetComponent<GenerateRoads>().copy_road;
+        StartCoroutine(waitForTrigger());
     }
 
     void setProbabilities()
@@ -58,15 +63,23 @@ public class GenerateEvents : MonoBehaviour
         //        hasEvent[i] = false;
         //    }
         //}
-        if (roads.Length != 0 && !eventsGenerated)
-        {
-            hasEvent = new bool[roads.Length];
-            for (int i = 0; i < hasEvent.Length; i++)
-            {
-                hasEvent[i] = false;
-            }
-            generateEvents();
-        }
+        //if (roads.Length != 0 && !eventsGenerated)
+        //{
+        //    hasEvent = new bool[roads.Length];
+        //    for (int i = 0; i < hasEvent.Length; i++)
+        //    {
+        //        hasEvent[i] = false;
+        //    }
+        //    StartCoroutine(waitForTrigger());
+        //}
+    }
+
+    IEnumerator waitForTrigger()
+    {
+        yield return new WaitForSeconds(0.2f);
+        //deactivateAllTrees();
+        roads = GetComponent<GenerateRoads>().generatedRoads;
+        generateEvents();
     }
 
     void deactivateAllTrees()
@@ -74,8 +87,11 @@ public class GenerateEvents : MonoBehaviour
         GameObject[] trees = GameObject.FindGameObjectsWithTag("tree");
         foreach(GameObject tree in trees)
         {
-            tree.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            tree.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+            tree.GetComponent<MeshRenderer>().enabled = false;
+            if (tree.gameObject.transform.childCount>0)
+            {
+                tree.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = false;
+            }
         }
     }
     void generateEvents()
@@ -109,7 +125,20 @@ public class GenerateEvents : MonoBehaviour
     void generateNormalEvent(int index)
     {
         GameObject instance;
-        int randomEvent = rand.Next(0, normalEvents.Length);
+        int randomEvent = -1;
+        if (treeCounter < 2 && instanceTreeCounter < 1)
+        {
+            randomEvent = rand.Next(0, normalEvents.Length);
+        }
+        else
+        {
+            randomEvent = rand.Next(0, normalEvents.Length - 1);
+        }
+        if (randomEvent == 2)
+        {
+            treeCounter++;
+            instanceTreeCounter++;
+        }
         instance=Instantiate(normalEvents[randomEvent], roads[index].transform.GetChild(1).transform.position, normalEvents[randomEvent].transform.rotation);
         instanceSetup(instance, index);
     }
@@ -132,12 +161,12 @@ public class GenerateEvents : MonoBehaviour
         {
             if (roads[index].gameObject.tag == "straightRoad")
             {
-                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y, roads[index].transform.GetChild(0).transform.rotation.z));
+                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y+180, roads[index].transform.GetChild(0).transform.rotation.z));
                 instanceSetup(instance, index);
             }
             else if(roads[index].gameObject.tag == "curvedroad")
             {
-                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y + 45, roads[index].transform.GetChild(0).transform.rotation.z));
+                instance=Instantiate(supernaturalEvents[randomEvent], new Vector3(roads[index].transform.GetChild(0).transform.position.x, supernaturalEvents[randomEvent].transform.position.y, roads[index].transform.GetChild(0).transform.position.z), Quaternion.Euler(roads[index].transform.GetChild(0).transform.rotation.x, roads[index].transform.GetChild(0).transform.rotation.y + 225, roads[index].transform.GetChild(0).transform.rotation.z));
                 instanceSetup(instance, index);
             }
         }
@@ -158,9 +187,9 @@ public class GenerateEvents : MonoBehaviour
 
     bool ghostCarCanSpawnHere(int index)
     {
-        if (index <= supernaturalEvents.Length - 3)
+        if (index >= 2)
         {
-            if ((roads[index + 1].gameObject.tag == "straightRoad") && (roads[index + 2].gameObject.tag == "straightRoad"))
+            if ((roads[index - 1].gameObject.tag == "straightRoad") && (roads[index - 2].gameObject.tag == "straightRoad"))
             {
                 return true;
             }
@@ -178,7 +207,7 @@ public class GenerateEvents : MonoBehaviour
             generateNormalEvent(index);
             hasEvent[index] = true;
         }
-        else if (randomChance <= (normalProbability + supernaturalProbability))
+        else
         {
             Debug.Log("Generating supernatural event");
             generateSupernaturalEvent(index);

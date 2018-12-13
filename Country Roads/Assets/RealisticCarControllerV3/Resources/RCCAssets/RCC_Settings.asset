@@ -82,10 +82,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ff163881ff0b5a94e93d787f281814d1, type: 3}
   - {fileID: 8300000, guid: 4ebe01570cad61a40be61693713688b4, type: 3}
   useSharedAudioSources: 1
-  maxGearShiftingSoundVolume: 0.25
-  maxCrashSoundVolume: 1
-  maxWindSoundVolume: 0.1
-  maxBrakeSoundVolume: 0.1
+  maxGearShiftingSoundVolume: 0
+  maxCrashSoundVolume: 0
+  maxWindSoundVolume: 0
+  maxBrakeSoundVolume: 0
   foldGeneralSettings: 1
   foldControllerSettings: 1
   foldUISettings: 1

@@ -9,6 +9,7 @@ public class Radio : MonoBehaviour
 	public AudioSource radioSound;
 	public AudioSource insaneRadio;
 	private GameObject camera;
+    public bool carOn = true;
 
 	public AudioClip SanityRadioHosts;
 	private bool SanityEvent = false;
@@ -20,8 +21,9 @@ public class Radio : MonoBehaviour
 	// Use this for initializsation
 	void Start()
 	{
-		//this.radioOn = false;
-		//start playing radio
+        this.radioOn = false;
+        //start playing radio
+        radioSound.clip = Song1;
 		radioSound.Play();
 		radioSound.volume = 0f;
 		camera = GameObject.FindGameObjectWithTag("GameCamera");
@@ -42,16 +44,22 @@ public class Radio : MonoBehaviour
 
 		if (camera.GetComponent<CameraController>().isRadioSeen() && !SanityEvent)
 		{
-			if (Input.GetButtonDown("XboxA"))
+			if (Input.GetButtonDown("XboxA") && carOn)
 			{
 				this.switchRadio();
-				//Debug.Log("Radio has been switched");
+				Debug.Log("Radio has been switched");
 			}
 		}
 		else if(SanityEvent && Time.time > SanityStart + insaneRadio.clip.length) {
 			insaneRadio.clip = null;
 			SanityEvent = false;
 		}
+        else if (!carOn)
+        {
+            offRadio();
+
+        }
+
 	}
 
 	// turn radio on or off
@@ -68,6 +76,11 @@ public class Radio : MonoBehaviour
 			radioSound.volume = 0f;
 		}
 	}
+    private void offRadio()
+    {
+        radioOn = false;
+        radioSound.volume = 0f;
+    }
 	public void switchTrack() {
 
 	}

@@ -22,7 +22,7 @@ public class GhostMusician : MonoBehaviour {
         coroutine_running = false;
         textClip = GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
         pose2 = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().musicianPose2;
-        carPosition = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().carPosition;
+        carPosition = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().carPosition2;
         radio = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().radio.GetComponent<Radio>();
     }
 
@@ -33,6 +33,8 @@ public class GhostMusician : MonoBehaviour {
         textClip = GetComponent<RandomAudioClip>().getRandomClip(GetComponent<RandomAudioClip>().soundClips);
         radio = GameObject.FindGameObjectWithTag("Radio").GetComponent<Radio>();
         pose2 = GameObject.FindWithTag("Pose2");
+        pose2 = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().musicianPose2;
+        carPosition = GameObject.Find("PublicObjects").GetComponent<PublicObjects>().carPosition2;
     }
 
     // Update is called once per frame
@@ -45,11 +47,13 @@ public class GhostMusician : MonoBehaviour {
         }
         if (pose_switched&&!coroutine_running && musicianSource.clip == textClip)
         {
+            this.transform.parent.transform.position = carPosition.transform.position;
+            this.transform.parent.transform.rotation = carPosition.transform.rotation;
             StartCoroutine(musicianCarHaunt());
         }
         if (pose_switched && coroutine_running){
-            pose2.transform.position = carPosition.transform.position;
-            pose2.transform.rotation = carPosition.transform.rotation;
+            this.transform.parent.transform.position = carPosition.transform.position;
+            this.transform.parent.transform.rotation = carPosition.transform.rotation;
             //pose2.transform.Translate(0, 0, 0.01f);
         }
         if (coroutine_running && musicianSource.clip == textClip && !musicianSource.isPlaying)
@@ -67,6 +71,8 @@ public class GhostMusician : MonoBehaviour {
         //pose2.transform.Translate(0, 0, 0.01f);
         pose2.SetActive(true);
         pose2.GetComponentInChildren<GhostMusician>().pose_switched = true;
+        pose2.transform.position = carPosition.transform.position;
+        pose2.transform.rotation = carPosition.transform.rotation;
         //pose2.GetComponent<ObserveableManager>().musicianHeard = true;
         this.gameObject.transform.parent.gameObject.SetActive(false);
     }

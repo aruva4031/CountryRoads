@@ -16,9 +16,12 @@ public class CrazyTreeScript : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
-	void Update () {
-
+    // Update is called once per frame
+    void Update() {
+        if (sanity.getSanity() <= 45 && sanity.getSelector() == 4)
+        {
+            setOff();
+        } 
 	}
 
 	public void OnTriggerEnter(Collider col)

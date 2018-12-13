@@ -6,6 +6,7 @@ using UnityEditor.UI;
 public class cr_controller : MonoBehaviour
 {
     public CanvasGroup pause;
+    public GameObject radioObject;
 
     public GameObject car;
     public AudioSource Radio;
@@ -166,9 +167,9 @@ public class cr_controller : MonoBehaviour
         car.GetComponent<RCC_CarControllerV3>().gasInput = 0.0f;
         car.GetComponent<RCC_CarControllerV3>().highBeamHeadLightsOn = false;
         Power = false;
-        Radio.volume = 0.0f;
+        radioObject.GetComponent<Radio>().carOn = false;
         yield return new WaitForSecondsRealtime(duration);
         Power = true;
-        Radio.volume = 1.0f;
+        radioObject.GetComponent<Radio>().carOn = true;
     }
 }

@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
         {
             if (hit.collider.tag == "Radio")
             {
-                Debug.Log("Player sees Radio");
+                //Debug.Log("Player sees Radio");
                 this.seeRadio = true;
             }
             else
