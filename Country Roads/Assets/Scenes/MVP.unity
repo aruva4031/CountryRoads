@@ -4813,7 +4813,7 @@ MonoBehaviour:
   supernaturalProbability: 0
   nothingProbability: 0
   normalEvents:
-  - {fileID: 0}
+  - {fileID: 1907908355397186, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
   - {fileID: 1966572013561924, guid: ab187fde13099e4449153e19a5a03e02, type: 2}
   - {fileID: 1153121817131552, guid: 356ebc39829f1f24c9d82e0b47017629, type: 2}
   supernaturalEvents:
@@ -9710,8 +9710,8 @@ GameObject:
   - component: {fileID: 303984266}
   - component: {fileID: 303984268}
   - component: {fileID: 303984267}
-  - component: {fileID: 303984264}
   - component: {fileID: 303984265}
+  - component: {fileID: 303984264}
   m_Layer: 0
   m_Name: UpStart
   m_TagString: Untagged
@@ -9737,8 +9737,15 @@ MonoBehaviour:
   normalProbability: 0
   supernaturalProbability: 0
   nothingProbability: 0
-  normalEvents: []
-  supernaturalEvents: []
+  normalEvents:
+  - {fileID: 1907908355397186, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
+  - {fileID: 1966572013561924, guid: ab187fde13099e4449153e19a5a03e02, type: 2}
+  - {fileID: 1153121817131552, guid: 356ebc39829f1f24c9d82e0b47017629, type: 2}
+  supernaturalEvents:
+  - {fileID: 1697769664299810, guid: b43f2919a138e3d4fa0fb53157c4f512, type: 2}
+  - {fileID: 1526519689250310, guid: 38b735cfb84945347b3de8ebe42b9679, type: 2}
+  - {fileID: 1375703133332554, guid: a7f8a4727d3f8474d92a05fe5d95f8a1, type: 2}
+  - {fileID: 1236122764421736, guid: 62eee2dd6d441e441bda023d87d9ae87, type: 2}
   instanceTreeCounter: 0
 --- !u!114 &303984265
 MonoBehaviour:
@@ -10899,8 +10906,8 @@ GameObject:
   - component: {fileID: 335614826}
   - component: {fileID: 335614828}
   - component: {fileID: 335614827}
-  - component: {fileID: 335614829}
   - component: {fileID: 335614830}
+  - component: {fileID: 335614829}
   m_Layer: 0
   m_Name: DownStart
   m_TagString: Untagged
@@ -10980,8 +10987,15 @@ MonoBehaviour:
   normalProbability: 0
   supernaturalProbability: 0
   nothingProbability: 0
-  normalEvents: []
-  supernaturalEvents: []
+  normalEvents:
+  - {fileID: 1907908355397186, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
+  - {fileID: 1966572013561924, guid: ab187fde13099e4449153e19a5a03e02, type: 2}
+  - {fileID: 1153121817131552, guid: 356ebc39829f1f24c9d82e0b47017629, type: 2}
+  supernaturalEvents:
+  - {fileID: 1697769664299810, guid: b43f2919a138e3d4fa0fb53157c4f512, type: 2}
+  - {fileID: 1526519689250310, guid: 38b735cfb84945347b3de8ebe42b9679, type: 2}
+  - {fileID: 1375703133332554, guid: a7f8a4727d3f8474d92a05fe5d95f8a1, type: 2}
+  - {fileID: 1236122764421736, guid: 62eee2dd6d441e441bda023d87d9ae87, type: 2}
   instanceTreeCounter: 0
 --- !u!114 &335614830
 MonoBehaviour:
@@ -29974,7 +29988,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826330167}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -173.7, y: 0.36, z: -556}
+  m_LocalPosition: {x: -791.8, y: 0.36, z: -556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1372129195}
@@ -67581,7 +67595,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -281718025
+  randomSeed: -1598285548
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -73685,7 +73699,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1285681745
+  randomSeed: -1568639428
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -78482,8 +78496,8 @@ GameObject:
   - component: {fileID: 1971467615}
   - component: {fileID: 1971467617}
   - component: {fileID: 1971467616}
-  - component: {fileID: 1971467614}
   - component: {fileID: 1971467613}
+  - component: {fileID: 1971467614}
   m_Layer: 0
   m_Name: DownStart
   m_TagString: Untagged
@@ -78538,14 +78552,14 @@ MonoBehaviour:
   supernaturalProbability: 0
   nothingProbability: 0
   normalEvents:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1907908355397186, guid: 3af64b87f3b9caf46b5728107845c8cd, type: 2}
+  - {fileID: 1966572013561924, guid: ab187fde13099e4449153e19a5a03e02, type: 2}
+  - {fileID: 1153121817131552, guid: 356ebc39829f1f24c9d82e0b47017629, type: 2}
   supernaturalEvents:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1697769664299810, guid: b43f2919a138e3d4fa0fb53157c4f512, type: 2}
+  - {fileID: 1526519689250310, guid: 38b735cfb84945347b3de8ebe42b9679, type: 2}
+  - {fileID: 1375703133332554, guid: a7f8a4727d3f8474d92a05fe5d95f8a1, type: 2}
+  - {fileID: 1236122764421736, guid: 62eee2dd6d441e441bda023d87d9ae87, type: 2}
   instanceTreeCounter: 0
 --- !u!4 &1971467615
 Transform:
