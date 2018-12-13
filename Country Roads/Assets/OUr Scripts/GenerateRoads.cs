@@ -330,7 +330,7 @@ public class GenerateRoads : MonoBehaviour {
 				getPoint1 = copy_road.gameObject.transform.GetChild(0).transform.position;
 			}
 
-			int infinteLoop = 10;
+			int infinteLoop = 0;
 			if(special){
 				while(special){
 					flagged = 0;
@@ -358,7 +358,7 @@ public class GenerateRoads : MonoBehaviour {
 					infinteLoop++;
 				}
 			}
-
+			firstTarget = ensureDirectionPoint.transform.position;
 			infinteLoop = -30;
 			while(SmartConnectionbegin && !test){
 				if(hasGenerationCompleted() || test){
