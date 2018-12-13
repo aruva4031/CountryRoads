@@ -8,6 +8,8 @@ public class GenerateRoads : MonoBehaviour {
 
     public GameObject precursorPoint;
     public bool special;
+	private Vector3 specialpoint;
+
     public string direction;
 	public GameObject[] roads; 
 
@@ -63,7 +65,7 @@ public class GenerateRoads : MonoBehaviour {
 		return false;
 	}
 
-	private int smartConnection(Vector3 targetPosition){
+	private int smartConnection(Vector3 targetPosition, bool shift){
 		int selectedPeice = 0;
 		int counter = 0;
 		float shortestDistance = 9999;
@@ -97,6 +99,9 @@ public class GenerateRoads : MonoBehaviour {
 					}
 				}
 			}
+		}
+		if (distances [selectedPeice] < 50 && shift) {
+			selectedPeice = -1;
 		}
 		return selectedPeice;
 
@@ -165,7 +170,10 @@ public class GenerateRoads : MonoBehaviour {
 	/// Alex's Code ////////////////////////////////////////////////////////////////////
 	// Use this for initialization
 	void Start () {
+		specialpoint = precursorPoint.transform.position;
+		specialpoint.y = 0.1f;
 		firstTarget = ensureDirectionPoint.transform.position;
+		firstTarget.y = 0.1f;
 		smartPeiceValidator [0] = true;
 		smartPeiceValidator [1] = true;
 		smartPeiceValidator [2] = true;
@@ -321,7 +329,37 @@ public class GenerateRoads : MonoBehaviour {
 				previousRoad = copy_road;
 				getPoint1 = copy_road.gameObject.transform.GetChild(0).transform.position;
 			}
-			int infinteLoop = -20;
+
+			int infinteLoop = 10;
+			if(special){
+				while(special){
+					flagged = 0;
+					moveTestPeice ();
+					index = smartConnection (specialpoint,true);
+					if(index == -1 || infinteLoop == 50){
+						special = false;;
+						break;
+					}
+					getPoint1 = new Vector3(getPoint1.x, 0.1f, getPoint1.z);
+					previousRoad = copy_road;
+
+					rightCurvedRoad ();
+					previousStraightRoad();
+					leftCurvedRoad();
+
+
+					if (flagged == 0) {
+						copy_road = Instantiate (roads [index], getPoint1, previousRoad.transform.rotation );
+						generatedRoads = AppentoArray (generatedRoads, copy_road);
+					}
+					previousRoad = copy_road;
+					getPoint1 = copy_road.gameObject.transform.GetChild(0).transform.position;
+
+					infinteLoop++;
+				}
+			}
+
+			infinteLoop = -30;
 			while(SmartConnectionbegin && !test){
 				if(hasGenerationCompleted() || test){
 					SmartConnectionbegin = false;
@@ -330,7 +368,7 @@ public class GenerateRoads : MonoBehaviour {
 				flagged = 0;
 				//Debug.Log ("SmartConnectionStarted");
 				moveTestPeice ();
-				index = smartConnection (firstTarget);
+				index = smartConnection (firstTarget,false);
 				//Debug.Log (index + " on loop " + infinteLoop);
 				if(index == -1 || infinteLoop == 50){
 					SmartConnectionbegin = false;

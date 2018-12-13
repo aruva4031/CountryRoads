@@ -49,6 +49,17 @@ public class resorcemanager : MonoBehaviour {
                 }
             }
         }
+		if (other.tag == "croosmesh")
+		{
+			for (int i = 0; i < 1; i++)
+			{
+				GameObject child = other.transform.GetChild(i).gameObject;
+				if (child != null)
+				{
+					child.SetActive(true);
+				}
+			}
+		}
     }
     private void OnTriggerExit(Collider other)
     {
@@ -63,6 +74,17 @@ public class resorcemanager : MonoBehaviour {
                 }
             }
         }
+		if (other.tag == "croosmesh")
+		{
+			for (int i = 0; i < 1; i++)
+			{
+				GameObject child = other.transform.GetChild(i).gameObject;
+				if (child != null)
+				{
+					child.SetActive(false);
+				}
+			}
+		}
 
     }
 }
