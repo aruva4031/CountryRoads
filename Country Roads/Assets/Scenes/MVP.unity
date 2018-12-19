@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.009256138, g: 0.009483897, b: 0.009256138, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -25003,13 +25003,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 672396763}
-  m_LocalRotation: {x: 0.2164396, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 0.0010070801, y: 0.763, z: 0.6430054}
-  m_LocalScale: {x: 0.15, y: 0.25, z: 0.05000001}
+  m_LocalRotation: {x: 0.1452197, y: 0, z: 0, w: 0.98939943}
+  m_LocalPosition: {x: -0.059, y: 0.844, z: 0.449}
+  m_LocalScale: {x: -0.18, y: 0.34, z: 0.05000001}
   m_Children: []
   m_Father: {fileID: 826330170}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.7, y: 0, z: 0}
 --- !u!23 &672396765
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25054,7 +25054,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.63, y: 1, z: 0.1}
+  m_Size: {x: 1.5, y: 0.67, z: 0.79}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &672396767
 MeshFilter:
@@ -25172,7 +25172,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
@@ -29672,7 +29672,7 @@ GameObject:
   - component: {fileID: 826330177}
   - component: {fileID: 826330178}
   - component: {fileID: 826330179}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
