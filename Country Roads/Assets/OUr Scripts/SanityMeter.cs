@@ -130,7 +130,7 @@ public class SanityMeter : MonoBehaviour
         }
         //************************CHANGED END!!!!!!!!!!!*************************************************************************
     }
-
+	//begins increasing sanity after a delay
     IEnumerator increaseSanity()
     {
         sanityIncreasing = false;
@@ -150,6 +150,7 @@ public class SanityMeter : MonoBehaviour
     }
 
     //************************CHANGED!!!!!!!!!!!*************************************************************************
+	//lowers sanity once
     public void lowerOnce(float ammount)
     //************************CHANGED END!!!!!!!!!!!*************************************************************************
     {
@@ -158,6 +159,7 @@ public class SanityMeter : MonoBehaviour
     }
 
     //************************CHANGED!!!!!!!!!!!*************************************************************************
+	//lowers sanity by a constant amount
     public void sanityLowering(float constantAmount)
     {
         //************************CHANGED END!!!!!!!!!!!*************************************************************************
@@ -169,7 +171,7 @@ public class SanityMeter : MonoBehaviour
     {
         lowerSanity = true;
     }
-
+	//runs a sanity event based on the selector
     private void sanityEvent(int selector)
     {
         if (selector == 1)

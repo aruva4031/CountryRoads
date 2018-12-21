@@ -13,12 +13,14 @@ public class TreeCollisionScript : MonoBehaviour {
 	void Update () {
 		
 	}
-
+	//if the tree collides
     public void OnCollisionStay(Collision collision)
     {
+		//with any piece of road 
         Debug.Log(collision.transform.tag);
         if (collision.transform.tag == "straightRoad" || collision.transform.tag == "curvedroadright" || collision.transform.tag == "curvedroadleft")
         {
+			//destory this tree
             Destroy(this.gameObject);
 
         }

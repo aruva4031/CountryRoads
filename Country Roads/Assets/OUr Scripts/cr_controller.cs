@@ -76,7 +76,7 @@ public class cr_controller : MonoBehaviour
     }
     void Update()
     {
-        //
+        //gather all the inputs for the xbox controller
         xbox_lsHaxis = Input.GetAxis("HorizontalLS") + randomSteeringValue;
         xbox_lsVAxis = (Input.GetAxis("VerticalLS") * -1) + randomSteeringValue;
         xbox_ls = Input.GetButton("XboxLS");
