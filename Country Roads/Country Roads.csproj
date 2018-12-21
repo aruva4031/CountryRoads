@@ -291,10 +291,8 @@
     <Compile Include="Assets\OUr Scripts\CameraController.cs" />
     <Compile Include="Assets\OUr Scripts\cr_controller.cs" />
     <Compile Include="Assets\OUr Scripts\CrazyTreeScript.cs" />
-    <Compile Include="Assets\OUr Scripts\DeerEvent.cs" />
     <Compile Include="Assets\OUr Scripts\DifficultyChosen.cs" />
     <Compile Include="Assets\OUr Scripts\EndSceneManager.cs" />
-    <Compile Include="Assets\OUr Scripts\EventObserver.cs" />
     <Compile Include="Assets\OUr Scripts\GenerateEvents.cs" />
     <Compile Include="Assets\OUr Scripts\GenerateRoads.cs" />
     <Compile Include="Assets\OUr Scripts\GhostCar.cs" />
@@ -302,7 +300,6 @@
     <Compile Include="Assets\OUr Scripts\GhostHitchhiker.cs" />
     <Compile Include="Assets\OUr Scripts\GhostMusician.cs" />
     <Compile Include="Assets\OUr Scripts\LightFlicker.cs" />
-    <Compile Include="Assets\OUr Scripts\NormalEvent.cs" />
     <Compile Include="Assets\OUr Scripts\ObserveableManager.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerController.cs" />
     <Compile Include="Assets\OUr Scripts\PlayerEventCollision.cs" />
@@ -318,7 +315,6 @@
     <Compile Include="Assets\OUr Scripts\SceneSelector.cs" />
     <Compile Include="Assets\OUr Scripts\StalkerGhostAI.cs" />
     <Compile Include="Assets\OUr Scripts\StartFire.cs" />
-    <Compile Include="Assets\OUr Scripts\SupernaturalEvent.cs" />
     <Compile Include="Assets\OUr Scripts\TreeCollisionScript.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCHoodCamera.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Scripts\Demo Scene Scripts\RCCResetScene.cs" />

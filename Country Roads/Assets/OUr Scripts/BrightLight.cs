@@ -3,7 +3,9 @@
  *  Description: Sanity Event that includes a bright orb of light appearing in front of the player. Only occurs if the sanity value is below 45.
  *               BrightLight is used in the SanityMeter script, where its values are also changed.
  */
-
+/**
+*	Outcome addressed: Physics-based lighting, where the bright light gradually brightens up all the area around it.
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

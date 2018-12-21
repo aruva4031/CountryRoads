@@ -1,6 +1,7 @@
 ﻿/**
  *  Title:       DifficultyChosen.cs
  *  Description: For pssing the difficulty level between scenes
+ *  Outcome addressed: Model player and apply it to game difficulty management
  */
 using System.Collections;
 using System.Collections.Generic;

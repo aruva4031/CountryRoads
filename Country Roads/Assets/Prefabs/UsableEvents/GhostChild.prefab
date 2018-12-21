@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 135777479306123812}
   m_Layer: 0
   m_Name: GhostChild
-  m_TagString: Untagged
+  m_TagString: GhostChild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1213,7 +1213,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1697769664299810}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 201.69, y: -0.03, z: 358.9}
+  m_LocalPosition: {x: -7.574744, y: 0.099999994, z: -0.8724346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4859458441030066}
@@ -1488,10 +1488,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.3528003
-  m_Height: 1.2897298
+  m_Radius: 0.47910467
+  m_Height: 2.2042363
   m_Direction: 1
-  m_Center: {x: 0.0001654625, y: 0.62521374, z: -0.08017802}
+  m_Center: {x: -0.12613894, y: 1.0824671, z: -0.080178}
 --- !u!137 &137462601266487538
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
