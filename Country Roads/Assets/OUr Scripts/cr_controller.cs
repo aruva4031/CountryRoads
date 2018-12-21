@@ -10,6 +10,7 @@ public class cr_controller : MonoBehaviour
 
     public GameObject car;
     public AudioSource Radio;
+	//power is used to see if the cars engine is on for events
     private bool Power = true;
 
     //  Left Analog Stick Axises
@@ -114,7 +115,7 @@ public class cr_controller : MonoBehaviour
         {
             pauseMenuOn();
         }
-        
+        //if there is power to the car then it would take in inputs normaly
         if (Power)
         {
 
@@ -129,6 +130,7 @@ public class cr_controller : MonoBehaviour
             }
             car.GetComponent<RCC_CarControllerV3>().steerInput = xbox_lsHaxis;
 
+			//this would control power to the lights that would intreact with other objects using physics
             if (xbox_lb)
             {
 
@@ -142,6 +144,7 @@ public class cr_controller : MonoBehaviour
                 }
             }
         }
+		//if there is no powere then only steering and braking would work with the car
         else if (!Power)
         {
             car.GetComponent<RCC_CarControllerV3>().steerInput = xbox_lsHaxis;
@@ -162,6 +165,7 @@ public class cr_controller : MonoBehaviour
 
     }
 
+	//this courotine controls how long the car should be turned off as well as turning off the radio with the ghost car interaction
     private IEnumerator PowerOff(float duration)
     {
         car.GetComponent<RCC_CarControllerV3>().gasInput = 0.0f;

@@ -19,6 +19,7 @@ public class RoadCollisionDetector : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other) {
 		//Debug.Log ("I hit: " + other.tag);
+		//checks to see if a road collision would occur with the test peice
 		if(other.tag == "straightRoad" || other.tag == "curvedroadright" || other.tag == "curvedroadleft")
 		{
 			

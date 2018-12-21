@@ -65,27 +65,33 @@ public class GenerateRoads : MonoBehaviour {
 		return false;
 	}
 
+	//this function return the index of the peice that would be the closest and would not hit a road
 	private int smartConnection(Vector3 targetPosition, bool shift){
 		int selectedPeice = 0;
 		int counter = 0;
 		float shortestDistance = 9999;
 
 
+		//this collects the information from the testing peice to see if it hit a road then it stores its distance to the final goal
 		foreach (GameObject point in testinPoints){
+			//this checks to see if the goal has already been reaches
 			if(point.GetComponent<RoadCollisionDetector>().connectionMade == true){
 				SmartConnectionbegin = false;
 				selectedPeice = counter;
 				return selectedPeice;
 			}
+			//this sees if the road would make a collision then sets its distance to 9999 
 			if (point.GetComponent<RoadCollisionDetector> ().hitARoad) {
 				smartPeiceValidator [counter] = false;
 				distances [counter] = 9999;
 			} 
+			//if no collision sets the distance to the goal
 			else {
 				distances [counter] = Vector3.Distance (point.transform.position, targetPosition);
 			}
 			counter++;
 		}
+		//this for loop simply finds the shortest peice among the pieces and returns it
 		for(int i = 0; i < distances.Length; i++){
 			if (distances [i] != 9999) {
 				if (shortestDistance == 9999) {
@@ -100,6 +106,7 @@ public class GenerateRoads : MonoBehaviour {
 				}
 			}
 		}
+		//this checks to see if the distance to a secondary point is close enough to begin aiming for the end goal
 		if (distances [selectedPeice] < 50 && shift) {
 			selectedPeice = -1;
 		}
@@ -108,6 +115,7 @@ public class GenerateRoads : MonoBehaviour {
 	}
 
 
+	//this moves the test peice along the generated peices to get correct measurments
 	private void moveTestPeice(){
 		int counter = 0;
 		if (movingTestingPeice != null) {
@@ -142,6 +150,7 @@ public class GenerateRoads : MonoBehaviour {
 	}
 
 
+	//appends objects to an array (for the roads)
 	private GameObject[] AppentoArray(GameObject[] OldArray, GameObject newItem){
 		int newLength = OldArray.Length + 1;
 		GameObject[] newArray = new GameObject[newLength];
@@ -153,6 +162,7 @@ public class GenerateRoads : MonoBehaviour {
 		return newArray;
 	}
 
+	//resizes the final array (used for trimming excess)
 	private GameObject[] ResizeArray(GameObject[] OldArray, int newSize){
 		int newLength = newSize + 1;
 		//Debug.Log (newLength);
@@ -287,7 +297,7 @@ public class GenerateRoads : MonoBehaviour {
 					//				}
 
 				}
-
+				//generates pure randomness up until the limiter is reached
 				if(generatedRoads.Length >= Limiter){
 					previousRoad = copy_road;
 					SmartConnectionbegin = true;
@@ -305,6 +315,7 @@ public class GenerateRoads : MonoBehaviour {
 					leftcounter++;
 				}
 			}
+			//ensures a straight peice after consecutive turns in order to prevent possible loops
 			if (leftcounter == 2){
 				index = 2;
 				getPoint1 = new Vector3(getPoint1.x, 0.1f, getPoint1.z);
@@ -331,6 +342,7 @@ public class GenerateRoads : MonoBehaviour {
 			}
 
 			int infinteLoop = 0;
+			//if there is a secondary goal to be reached then that is treated as the roads goal
 			if(special){
 				while(special){
 					flagged = 0;
@@ -360,6 +372,7 @@ public class GenerateRoads : MonoBehaviour {
 			}
 			firstTarget = ensureDirectionPoint.transform.position;
 			infinteLoop = -30;
+			//begins final rouat to the destination
 			while(SmartConnectionbegin && !test){
 				if(hasGenerationCompleted() || test){
 					SmartConnectionbegin = false;
@@ -395,6 +408,7 @@ public class GenerateRoads : MonoBehaviour {
 			reachedEndPoint = true;
 			flagged = 0;
 		}
+		//if the endpoint has reached then the array of road peices should trim its excess
 		if(reachedEndPoint && flagged == 0){
 			int firstconnection = 9999;
 			for(int k = 0; k < generatedRoads.Length; k++) {

@@ -22,13 +22,16 @@ public class GhostCar : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		//keeps accelerating the ghost car for the duration of its life
 		if (Time.time < Duration) {
 			thisCar.velocity = transform.forward * speed;
 			speed = speed + 0.05f;
 		}
+		//if its duration is over it deactivates itself
 		else if(Time.time > Duration) {
 			this.gameObject.SetActive(false);
 		}
+		//lowers the players sanity by looking at the car
 		if(camera.GetComponent<CameraController>().isGhostSeen(this.tag) && SpookeEm == false){
 			SanityHandler.GetComponent<SanityMeter>().lowerOnce(SanityLowerOnceAmount);
 			SpookeEm = true;
@@ -40,6 +43,7 @@ public class GhostCar : MonoBehaviour {
 
 	}
 
+	//checks to see if the ghost car has hit the players car in order to start the event
 	private void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Player" && Time.time > NextEvent) {
 			NextEvent = Time.time + Duration;

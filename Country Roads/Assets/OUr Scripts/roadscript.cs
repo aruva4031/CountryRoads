@@ -14,6 +14,7 @@ public class roadscript : MonoBehaviour {
 	// Update is called once per frame
 
 	private void OnTriggerEnter(Collider other) {
+		//see's if the road has connected to the goal
 		if(other.tag == "CrossPiece")
 		{
 			roadConnected = true;
@@ -24,6 +25,7 @@ public class roadscript : MonoBehaviour {
 	}
     private void OnCollisionStay(Collision collision)
     {
+		//destroys excess trees
         if (collision.gameObject.tag == "tree")
         {
 
