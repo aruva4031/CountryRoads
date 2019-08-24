@@ -12,4 +12,4 @@ Julia: I'm pretty happy how the event generation turned out. Not everything is p
 
 Bianca: I am really proud of my road generation. It was a set up from my last project and now the bar is raised for the next project I plan to work on. This is definately the project I plan to reference to when working on another generation script. Plus the added restrait of trying not to have the road loop on itself was a mountain to cross over but led to a huge accomplishment. Granted with more time I can make it even better to hopefully having mountains form around the road for a future side project to country roads. 
 
-Alex:
+Alex: I am proud of enhancing the road generation script so that it know what general dircection it needs to got to. I am also happy with the ghost car script as well as the additions to the driving scipt to accomadate for more features. I am glad to have have lead my team as well as maintaining a schedule for our goals.
